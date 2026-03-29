@@ -1,14 +1,22 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 
 export function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/hero/hero-main.webp')" }}
-      >
-        <div className="absolute inset-0 bg-black/60" />
-      </div>
+      <Image
+        src="/images/hero/hero-main.webp"
+        alt="Professional villa and apartment cleaning services in Dubai and UAE - Al Haya Cleaning"
+        fill
+        priority
+        loading="eager"
+        quality={75}
+        sizes="100vw"
+        placeholder="blur"
+        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAFBABAAAAAAAAAAAAAAAAAAAACf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAB//2Q=="
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-black/60" />
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
