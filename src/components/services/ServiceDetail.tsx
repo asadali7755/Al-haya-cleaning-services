@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Service } from "@/types";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -11,24 +12,33 @@ interface ServiceDetailProps {
 export function ServiceDetail({ service }: ServiceDetailProps) {
   return (
     <article>
-      <div className="relative py-20 px-4" style={{ backgroundColor: "var(--bg-secondary)" }}>
-        <div className="max-w-4xl mx-auto">
-          <nav className="flex items-center gap-2 text-sm mb-8" style={{ color: "var(--text-muted)" }}>
+      <section className="relative h-[60vh] sm:h-[70vh] lg:h-screen flex items-center overflow-hidden">
+        <Image
+          src={service.image}
+          alt={`${service.name} in Dubai & UAE - Al Haya Cleaning Services`}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 text-center">
+          <nav className="flex items-center gap-2 text-sm mb-8 justify-center flex-wrap text-gray-300">
             <Link href="/" className="hover:text-gold transition-colors">Home</Link>
             <ChevronRight className="w-4 h-4" />
             <Link href="/#services" className="hover:text-gold transition-colors">Services</Link>
             <ChevronRight className="w-4 h-4" />
-            <span style={{ color: "var(--text-primary)" }}>{service.name}</span>
+            <span className="text-white">{service.name}</span>
           </nav>
 
-          <h1 className="font-display text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--text-primary)" }}>
-            {service.name}
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+            {service.name} <span className="text-gold" style={{ textShadow: "0 2px 8px rgba(212, 175, 55, 0.3)" }}>in UAE</span>
           </h1>
-          <p className="text-lg leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+          <p className="text-lg leading-relaxed text-gray-200 max-w-3xl mx-auto">
             {service.shortDescription}
           </p>
         </div>
-      </div>
+      </section>
 
       <div className="py-16 px-4">
         <div className="max-w-4xl mx-auto">

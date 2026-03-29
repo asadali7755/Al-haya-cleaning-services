@@ -62,22 +62,20 @@ export function ContactForm() {
     setStatus("submitting");
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      const data = await res.json();
+      const whatsappNum = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971545567799";
+      const serviceName = services.find(s => s.slug === formData.service)?.name || formData.service;
+      const text = `New Cleaning Inquiry
 
-      if (res.ok && data.success) {
-        setStatus("success");
-        setFormData({ name: "", email: "", phone: "", service: "", message: "" });
-      } else if (data.errors) {
-        setErrors(data.errors);
-        setStatus("idle");
-      } else {
-        setStatus("error");
-      }
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Service: ${serviceName}
+
+Message: ${formData.message}`;
+      const waUrl = `https://wa.me/${whatsappNum.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(text)}`;
+      window.open(waUrl, "_blank");
+      setStatus("success");
+      setFormData({ name: "", email: "", phone: "", service: "", message: "" });
     } catch {
       setStatus("error");
     }

@@ -5,9 +5,14 @@ import { generateLocalBusinessSchema } from "@/lib/schema";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact Us - Get Free Cleaning Quote in Dubai & UAE",
   description:
-    "Get a free cleaning quote from Al Haya Cleaning Services. Contact us via phone, email, or WhatsApp for villa, apartment, and office cleaning across the UAE.",
+    "Get a free cleaning quote from Al Haya. Call +971 545 567 799 or WhatsApp us for villa cleaning, apartment cleaning, deep cleaning in Dubai, Abu Dhabi, Sharjah & all UAE Emirates.",
+  openGraph: {
+    title: "Contact Al Haya Cleaning Services - Free Quote",
+    description: "Get a free cleaning quote. Call +971 545 567 799 or WhatsApp us.",
+    images: [{ url: "/images/hero/hero-main.webp" }],
+  },
   alternates: {
     canonical: `${process.env.SITE_URL || "http://localhost:3000"}/contact`,
   },
@@ -54,8 +59,8 @@ export default function ContactPage() {
                   <Mail className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-medium" style={{ color: "var(--text-primary)" }}>Email</p>
-                    <a href="mailto:info@alhaya.ae" className="text-gold hover:underline">
-                      info@alhaya.ae
+                    <a href="mailto:Madinatalhaya@gmail.com" className="text-gold hover:underline">
+                      Madinatalhaya@gmail.com
                     </a>
                   </div>
                 </div>

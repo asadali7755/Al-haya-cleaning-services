@@ -25,12 +25,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const siteUrl = process.env.SITE_URL || "http://localhost:3000";
   return {
-    title: emirate.metaTitle,
-    description: emirate.metaDescription,
+    title: `${emirate.metaTitle} | Villa, Apartment & Deep Cleaning ${emirate.name}`,
+    description: `${emirate.metaDescription} Best villa cleaning, apartment cleaning, deep cleaning & office cleaning in ${emirate.name}. Call +971 545 567 799.`,
+    keywords: [`cleaning services ${emirate.name}`, `villa cleaning ${emirate.name}`, `apartment cleaning ${emirate.name}`, `deep cleaning ${emirate.name}`, `office cleaning ${emirate.name}`, `house cleaning ${emirate.name}`, `maid service ${emirate.name}`],
     openGraph: {
       title: emirate.metaTitle,
       description: emirate.metaDescription,
       url: `${siteUrl}/locations/${emirate.slug}`,
+      images: [{ url: emirate.heroImage }],
     },
     alternates: { canonical: `${siteUrl}/locations/${emirate.slug}` },
   };
@@ -53,7 +55,7 @@ export default async function EmiratePage({ params }: PageProps) {
       ])} />
 
       {/* Hero Section with Background Image */}
-      <section className="relative min-h-[60vh] flex items-end overflow-hidden">
+      <section className="relative h-[60vh] sm:h-[70vh] lg:h-screen flex items-center overflow-hidden">
         <Image
           src={emirate.heroImage}
           alt={`${emirate.name} skyline`}
@@ -63,7 +65,7 @@ export default async function EmiratePage({ params }: PageProps) {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 pb-12 pt-20">
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 text-center">
           <nav className="flex items-center gap-2 text-sm mb-8 text-gray-300">
             <Link href="/" className="hover:text-gold transition-colors">Home</Link>
             <ChevronRight className="w-4 h-4" />

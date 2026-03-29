@@ -23,13 +23,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const siteUrl = process.env.SITE_URL || "http://localhost:3000";
 
   return {
-    title: service.metaTitle,
-    description: service.metaDescription,
+    title: `${service.metaTitle} | Best ${service.name} Dubai, Abu Dhabi`,
+    description: `${service.metaDescription} Serving Dubai, Abu Dhabi, Sharjah & all 7 Emirates. Call +971 545 567 799 for free quote.`,
+    keywords: service.keywords,
     openGraph: {
       title: service.metaTitle,
       description: service.metaDescription,
       url: `${siteUrl}/services/${service.slug}`,
       type: "website",
+      images: [{ url: service.image }],
     },
     alternates: {
       canonical: `${siteUrl}/services/${service.slug}`,

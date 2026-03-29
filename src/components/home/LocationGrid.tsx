@@ -8,8 +8,8 @@ export function LocationGrid() {
     <section id="locations" className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
         <SectionHeading
-          title="We Serve All Emirates"
-          subtitle="Professional cleaning services across the UAE"
+          title="Cleaning Services Across All 7 UAE Emirates"
+          subtitle="Dubai, Abu Dhabi, Sharjah, Ajman, RAK, Fujairah & Umm Al Quwain"
         />
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mt-12">
@@ -18,7 +18,7 @@ export function LocationGrid() {
               <div className="group relative overflow-hidden rounded-xl min-h-[280px] cursor-pointer">
                 <Image
                   src={emirate.image}
-                  alt={emirate.name}
+                  alt={`Cleaning services in ${emirate.name} - Professional home & office cleaning`}
                   fill
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"

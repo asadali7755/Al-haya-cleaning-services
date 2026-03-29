@@ -20,19 +20,38 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Al Haya Cleaning Services | Premium Cleaning in UAE",
-    template: "%s | Al Haya Cleaning Services",
+    default: "Al Haya Cleaning Services | Villa & Apartment Cleaning Dubai, Abu Dhabi, UAE",
+    template: "%s | Al Haya Cleaning Services UAE",
   },
   description:
-    "Professional villa, apartment, and office cleaning services across the UAE. Deep cleaning, move-in/move-out, and specialized cleaning solutions in Dubai, Abu Dhabi, and all Emirates.",
+    "Best villa cleaning, apartment cleaning, deep cleaning & office cleaning services in Dubai, Abu Dhabi, Sharjah & all UAE Emirates. Professional cleaners, eco-friendly products. Call +971 545 567 799 for a free quote.",
+  keywords: [
+    "cleaning services Dubai", "villa cleaning Dubai", "apartment cleaning Dubai",
+    "deep cleaning Dubai", "office cleaning Dubai", "cleaning company UAE",
+    "house cleaning Abu Dhabi", "maid service Dubai", "cleaning services Abu Dhabi",
+    "cleaning services Sharjah", "move out cleaning Dubai", "sofa cleaning Dubai",
+    "carpet cleaning Dubai", "window cleaning Dubai", "post construction cleaning Dubai",
+    "professional cleaning UAE", "home cleaning Dubai", "best cleaning company Dubai",
+    "affordable cleaning services Dubai", "cleaning services near me",
+  ],
   metadataBase: new URL(process.env.SITE_URL || "http://localhost:3000"),
   openGraph: {
     type: "website",
     locale: "en_AE",
     siteName: "Al Haya Cleaning Services",
+    images: [{ url: "/images/hero/hero-main.webp", width: 1920, height: 1080, alt: "Al Haya Cleaning Services - Professional Cleaning in UAE" }],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/images/hero/hero-main.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 },
+  },
+  alternates: {
+    canonical: process.env.SITE_URL || "http://localhost:3000",
   },
 };
 

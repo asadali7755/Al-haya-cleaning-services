@@ -147,7 +147,7 @@ export const services: Service[] = [
       "Full sanitization for immediate occupancy",
       "Specialized equipment for heavy-duty cleaning",
     ],
-    image: "/images/services/post-construction-cleaning.webp",
+    image: "/images/services/post-construction-cleaning.jpg",
     icon: "hardhat",
     keywords: ["post construction cleaning Dubai", "after renovation cleaning UAE", "builder clean services"],
     metaTitle: "Post-Construction Cleaning in UAE",

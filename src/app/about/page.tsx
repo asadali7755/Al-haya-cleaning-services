@@ -7,9 +7,14 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Shield, Award, Users, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Al Haya - Best Cleaning Company in Dubai & UAE Since 2015",
   description:
-    "Learn about Al Haya Cleaning Services — trusted by hundreds of families and businesses across the UAE. Professional, reliable, and thorough cleaning since 2015.",
+    "Al Haya Cleaning Services — trusted by 500+ families & businesses in Dubai, Abu Dhabi, Sharjah & all UAE. 9+ years of professional villa cleaning, apartment cleaning & deep cleaning. Insured staff, eco-friendly products.",
+  openGraph: {
+    title: "About Al Haya - Best Cleaning Company in Dubai & UAE",
+    description: "Trusted by 500+ families across the UAE. Professional cleaning since 2015.",
+    images: [{ url: "/images/hero/hero-main.webp" }],
+  },
   alternates: {
     canonical: `${process.env.SITE_URL || "http://localhost:3000"}/about`,
   },

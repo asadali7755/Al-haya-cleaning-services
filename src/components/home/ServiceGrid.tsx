@@ -8,8 +8,8 @@ export function ServiceGrid() {
     <section id="services" className="py-20 px-4" style={{ backgroundColor: "var(--bg-secondary)" }}>
       <div className="max-w-7xl mx-auto">
         <SectionHeading
-          title="Our Cleaning Services"
-          subtitle="Professional solutions tailored to your needs"
+          title="Our Cleaning Services in Dubai & UAE"
+          subtitle="Villa cleaning, apartment cleaning, deep cleaning & more across all Emirates"
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
@@ -18,7 +18,7 @@ export function ServiceGrid() {
               <div className="group relative overflow-hidden rounded-xl min-h-[280px] cursor-pointer">
                 <Image
                   src={service.image}
-                  alt={service.name}
+                  alt={`${service.name} in Dubai & UAE - Al Haya Cleaning Services`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"

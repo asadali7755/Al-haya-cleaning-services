@@ -39,7 +39,7 @@ export async function POST(request: Request) {
 
     const { name, email, phone, service, message } = body;
 
-    const contactEmail = process.env.CONTACT_EMAIL || "info@alhaya.ae";
+    const contactEmail = process.env.CONTACT_EMAIL || "Madinatalhaya@gmail.com";
     const apiKey = process.env.RESEND_API_KEY;
 
     if (apiKey) {

@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /_next/
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
 
 Sitemap: https://alhaya.ae/sitemap.xml

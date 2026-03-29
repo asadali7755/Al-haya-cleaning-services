@@ -58,8 +58,8 @@ export function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <Mail className="w-4 h-4 text-gold flex-shrink-0" />
-              <a href="mailto:info@alhaya.ae" className="hover:text-gold transition-colors" style={{ color: "var(--text-muted)" }}>
-                info@alhaya.ae
+              <a href="mailto:Madinatalhaya@gmail.com" className="hover:text-gold transition-colors" style={{ color: "var(--text-muted)" }}>
+                Madinatalhaya@gmail.com
               </a>
             </li>
             <li className="flex items-center gap-3">

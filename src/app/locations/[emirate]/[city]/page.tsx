@@ -26,17 +26,20 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { emirate: eSlug, city: cSlug } = await params;
+  const emirate = getEmirateBySlug(eSlug);
   const city = getCityBySlug(eSlug, cSlug);
-  if (!city) return {};
+  if (!city || !emirate) return {};
 
   const siteUrl = process.env.SITE_URL || "http://localhost:3000";
   return {
-    title: city.metaTitle,
-    description: city.metaDescription,
+    title: `${city.metaTitle} | Best Cleaning Company in ${city.name}`,
+    description: `${city.metaDescription} Villa cleaning, apartment cleaning, deep cleaning in ${city.name}, ${emirate.name}. Call +971 545 567 799 for free quote.`,
+    keywords: [`cleaning services ${city.name}`, `villa cleaning ${city.name}`, `apartment cleaning ${city.name}`, `deep cleaning ${city.name}`, `house cleaning ${city.name}`, `maid service ${city.name} ${emirate.name}`],
     openGraph: {
       title: city.metaTitle,
       description: city.metaDescription,
       url: `${siteUrl}/locations/${eSlug}/${cSlug}`,
+      images: [{ url: city.image || emirate.heroImage }],
     },
     alternates: { canonical: `${siteUrl}/locations/${eSlug}/${cSlug}` },
   };
@@ -62,7 +65,7 @@ export default async function CityPage({ params }: PageProps) {
       ])} />
 
       {/* Hero Section with Background Image */}
-      <section className="relative min-h-[60vh] flex items-end overflow-hidden">
+      <section className="relative h-[60vh] sm:h-[70vh] lg:h-screen flex items-center overflow-hidden">
         <Image
           src={heroImage}
           alt={`${city.name}, ${emirate.name}`}
@@ -72,7 +75,7 @@ export default async function CityPage({ params }: PageProps) {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 pb-12 pt-20">
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 text-center">
           <nav className="flex items-center gap-2 text-sm mb-8 flex-wrap text-gray-300">
             <Link href="/" className="hover:text-gold transition-colors">Home</Link>
             <ChevronRight className="w-4 h-4" />
