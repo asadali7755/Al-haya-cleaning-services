@@ -53,6 +53,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: process.env.SITE_URL || "http://localhost:3000",
   },
+  verification: {
+    google: "Ol568I9cq3MjpiwjyX6L-LbunjtcXvdn15GY3cGTng0",
+  },
 };
 
 export default function RootLayout({
