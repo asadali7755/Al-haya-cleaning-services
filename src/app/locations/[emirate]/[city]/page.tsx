@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const siteUrl = process.env.SITE_URL || "http://localhost:3000";
   return {
     title: `${city.metaTitle} | Best Cleaning Company in ${city.name}`,
-    description: `${city.metaDescription} Villa cleaning, apartment cleaning, deep cleaning in ${city.name}, ${emirate.name}. Call +971 545 567 799 for free quote.`,
+    description: `${city.metaDescription} Villa cleaning, apartment cleaning, deep cleaning in ${city.name}, ${emirate.name}. Call +971 551 275 545 for free quote.`,
     keywords: [`cleaning services ${city.name}`, `villa cleaning ${city.name}`, `apartment cleaning ${city.name}`, `deep cleaning ${city.name}`, `house cleaning ${city.name}`, `maid service ${city.name} ${emirate.name}`],
     openGraph: {
       title: city.metaTitle,

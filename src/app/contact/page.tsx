@@ -7,10 +7,10 @@ import { Mail, Phone, MapPin } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact Us - Get Free Cleaning Quote in Dubai & UAE",
   description:
-    "Get a free cleaning quote from Al Haya. Call +971 545 567 799 or WhatsApp us for villa cleaning, apartment cleaning, deep cleaning in Dubai, Abu Dhabi, Sharjah & all UAE Emirates.",
+    "Get a free cleaning quote from Al Haya. Call +971 551 275 545 or WhatsApp us for villa cleaning, apartment cleaning, deep cleaning in Dubai, Abu Dhabi, Sharjah & all UAE Emirates.",
   openGraph: {
     title: "Contact Al Haya Cleaning Services - Free Quote",
-    description: "Get a free cleaning quote. Call +971 545 567 799 or WhatsApp us.",
+    description: "Get a free cleaning quote. Call +971 551 275 545 or WhatsApp us.",
     images: [{ url: "/images/hero/hero-main.webp" }],
   },
   alternates: {
@@ -50,8 +50,8 @@ export default function ContactPage() {
                   <Phone className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-medium" style={{ color: "var(--text-primary)" }}>Phone</p>
-                    <a href="tel:+971545567799" className="text-gold hover:underline">
-                      +971 545 567 799
+                    <a href="tel:+971551275545" className="text-gold hover:underline">
+                      +971 551 275 545
                     </a>
                   </div>
                 </div>
@@ -84,7 +84,7 @@ export default function ContactPage() {
                 Chat with us directly for a quick response.
               </p>
               <a
-                href={`https://wa.me/${(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971545567799").replace(/[^0-9]/g, "")}`}
+                href={`https://wa.me/${(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971551275545").replace(/[^0-9]/g, "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#25D366] text-white font-medium hover:bg-[#20bd5a] transition-colors"

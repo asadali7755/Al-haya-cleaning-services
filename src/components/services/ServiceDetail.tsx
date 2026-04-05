@@ -80,7 +80,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
                 Get a Free Quote
               </Button>
               <Button
-                href={`https://wa.me/${(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971545567799").replace(/[^0-9]/g, "")}?text=${encodeURIComponent(`Hi! I'm interested in your ${service.name} service.`)}`}
+                href={`https://wa.me/${(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971551275545").replace(/[^0-9]/g, "")}?text=${encodeURIComponent(`Hi! I'm interested in your ${service.name} service.`)}`}
                 variant="secondary"
                 size="lg"
               >

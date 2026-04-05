@@ -62,7 +62,7 @@ export function ContactForm() {
     setStatus("submitting");
 
     try {
-      const whatsappNum = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971545567799";
+      const whatsappNum = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971551275545";
       const serviceName = services.find(s => s.slug === formData.service)?.name || formData.service;
       const text = `New Cleaning Inquiry
 
@@ -95,7 +95,7 @@ Message: ${formData.message}`;
     );
   }
 
-  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971545567799";
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971551275545";
   const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, "")}`;
 
   return (
@@ -142,7 +142,7 @@ Message: ${formData.message}`;
           value={formData.phone}
           onChange={(v) => setFormData((p) => ({ ...p, phone: v }))}
           error={errors.phone}
-          placeholder="+971 545 567 799"
+          placeholder="+971 551 275 545"
           required
         />
         <div>

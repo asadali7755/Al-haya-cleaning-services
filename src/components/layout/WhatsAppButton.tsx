@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react";
 
 export function WhatsAppButton() {
   const number = (
-    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971545567799"
+    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971551275545"
   ).replace(/[^0-9]/g, "");
   const url = `https://wa.me/${number}?text=${encodeURIComponent("Hello! I'm interested in Al Haya Cleaning Services.")}`;
 

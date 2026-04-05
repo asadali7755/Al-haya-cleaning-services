@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `${service.metaTitle} | Best ${service.name} Dubai, Abu Dhabi`,
-    description: `${service.metaDescription} Serving Dubai, Abu Dhabi, Sharjah & all 7 Emirates. Call +971 545 567 799 for free quote.`,
+    description: `${service.metaDescription} Serving Dubai, Abu Dhabi, Sharjah & all 7 Emirates. Call +971 551 275 545 for free quote.`,
     keywords: service.keywords,
     openGraph: {
       title: service.metaTitle,

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Al Haya Cleaning Services UAE",
   },
   description:
-    "Best villa cleaning, apartment cleaning, deep cleaning & office cleaning services in Dubai, Abu Dhabi, Sharjah & all UAE Emirates. Professional cleaners, eco-friendly products. Call +971 545 567 799 for a free quote.",
+    "Best villa cleaning, apartment cleaning, deep cleaning & office cleaning services in Dubai, Abu Dhabi, Sharjah & all UAE Emirates. Professional cleaners, eco-friendly products. Call +971 551 275 545 for a free quote.",
   keywords: [
     "cleaning services Dubai", "villa cleaning Dubai", "apartment cleaning Dubai",
     "deep cleaning Dubai", "office cleaning Dubai", "cleaning company UAE",

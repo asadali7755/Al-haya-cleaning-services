@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/Button";
 import { Phone } from "lucide-react";
 
 export function CTASection() {
-  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971545567799";
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971551275545";
   const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hello! I'm interested in Al Haya Cleaning Services.")}`;
 
   return (
