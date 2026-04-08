@@ -10,7 +10,7 @@ export function Hero() {
         fill
         priority
         loading="eager"
-        quality={75}
+        quality={65}
         sizes="100vw"
         placeholder="blur"
         blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAFBABAAAAAAAAAAAAAAAAAAAACf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAB//2Q=="
@@ -23,9 +23,9 @@ export function Hero() {
           #1 Villa & Apartment Cleaning Services{" "}
           <span className="text-gold" style={{ textShadow: "0 2px 8px rgba(212, 175, 55, 0.3)" }}>in Dubai & All UAE</span>
         </h1>
-        <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Professional deep cleaning, office cleaning & home cleaning services in Dubai, Abu Dhabi, Sharjah & all 7 Emirates. Eco-friendly products, trained staff, satisfaction guaranteed.
-        </p>
+        <h2 className="font-display text-xl md:text-2xl lg:text-3xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed font-normal">
+          Trusted Villa, Apartment & Deep Cleaning Company Across Dubai, Abu Dhabi, Sharjah & All 7 Emirates
+        </h2>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button href="/contact" size="lg">
             Get a Free Quote

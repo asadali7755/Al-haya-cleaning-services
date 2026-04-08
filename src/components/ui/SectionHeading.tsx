@@ -28,9 +28,12 @@ export function SectionHeading({
         )}
       />
       {subtitle && (
-        <p className="text-lg" style={{ color: "var(--text-muted)" }}>
+        <h2
+          className="font-display text-xl md:text-2xl font-semibold"
+          style={{ color: "var(--text-secondary)" }}
+        >
           {subtitle}
-        </p>
+        </h2>
       )}
     </div>
   );

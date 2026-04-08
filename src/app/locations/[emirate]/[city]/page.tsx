@@ -72,7 +72,7 @@ export default async function CityPage({ params }: PageProps) {
           fill
           priority
           loading="eager"
-          quality={75}
+          quality={65}
           sizes="100vw"
           placeholder="blur"
           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAFBABAAAAAAAAAAAAAAAAAAAACf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAB//2Q=="
@@ -93,9 +93,9 @@ export default async function CityPage({ params }: PageProps) {
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
             Cleaning Services in <span className="text-gold" style={{ textShadow: "0 2px 8px rgba(212, 175, 55, 0.3)" }}>{city.name}</span>
           </h1>
-          <p className="text-lg leading-relaxed text-gray-200 max-w-3xl">
+          <h2 className="font-display text-xl md:text-2xl lg:text-3xl font-semibold leading-relaxed text-gray-200 max-w-3xl mx-auto">
             {city.description}
-          </p>
+          </h2>
         </div>
       </section>
 
