@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Check, ChevronRight, MapPin, Shield, Clock, Award, Sparkles, Users, Leaf, ThumbsUp, Star } from "lucide-react";
 import { emirates } from "@/data/locations";
+import { serviceGalleries } from "@/data/service-galleries";
+import { ServiceGallery } from "@/components/services/ServiceGallery";
 
 interface ServiceDetailProps {
   service: Service;
@@ -13,7 +15,7 @@ interface ServiceDetailProps {
 export function ServiceDetail({ service }: ServiceDetailProps) {
   return (
     <article>
-      <section className="relative h-[60vh] sm:h-[70vh] lg:h-screen flex items-center overflow-hidden">
+      <section className="relative h-[55vh] sm:h-[65vh] lg:h-[80vh] flex items-center overflow-hidden">
         <Image
           src={service.image}
           alt={`${service.name} in Dubai & UAE - Al Haya Cleaning Services`}
@@ -90,6 +92,44 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
         </div>
       </div>
 
+      <ServiceGallery serviceName={service.name} images={serviceGalleries[service.slug] || []} />
+
+      <section className="py-16 px-4" style={{ backgroundColor: "var(--bg-secondary)" }}>
+        <div className="max-w-7xl mx-auto">
+          <SectionHeading
+            title={`${service.name} Available in All UAE Emirates`}
+            subtitle="Choose your location for professional cleaning service near you"
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            {emirates.map((emirate) => (
+              <Link key={emirate.slug} href={`/locations/${emirate.slug}`}>
+                <div className="group relative overflow-hidden rounded-xl min-h-[220px] cursor-pointer">
+                  <Image
+                    src={emirate.heroImage || emirate.image}
+                    alt={`${service.name} in ${emirate.name}`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <div className="flex items-center gap-2 mb-1">
+                      <MapPin className="w-4 h-4 text-gold" />
+                      <h3 className="font-display text-xl font-semibold text-white">
+                        {emirate.name}
+                      </h3>
+                    </div>
+                    <p className="text-sm text-gray-200">
+                      {emirate.cities.length}+ areas covered
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="relative py-20 px-4 overflow-hidden" style={{ background: "linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #0f1419 100%)" }}>
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, gold 0%, transparent 50%), radial-gradient(circle at 80% 80%, gold 0%, transparent 50%)" }} />
 
@@ -164,42 +204,6 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
                   </p>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-4" style={{ backgroundColor: "var(--bg-secondary)" }}>
-        <div className="max-w-7xl mx-auto">
-          <SectionHeading
-            title={`${service.name} Available in All UAE Emirates`}
-            subtitle="Choose your location for professional cleaning service near you"
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            {emirates.map((emirate) => (
-              <Link key={emirate.slug} href={`/locations/${emirate.slug}`}>
-                <div className="group relative overflow-hidden rounded-xl min-h-[220px] cursor-pointer">
-                  <Image
-                    src={emirate.heroImage || emirate.image}
-                    alt={`${service.name} in ${emirate.name}`}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <div className="flex items-center gap-2 mb-1">
-                      <MapPin className="w-4 h-4 text-gold" />
-                      <h3 className="font-display text-xl font-semibold text-white">
-                        {emirate.name}
-                      </h3>
-                    </div>
-                    <p className="text-sm text-gray-200">
-                      {emirate.cities.length}+ areas covered
-                    </p>
-                  </div>
-                </div>
-              </Link>
             ))}
           </div>
         </div>

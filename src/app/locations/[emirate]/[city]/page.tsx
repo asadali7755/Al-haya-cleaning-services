@@ -65,7 +65,7 @@ export default async function CityPage({ params }: PageProps) {
       ])} />
 
       {/* Hero Section with Background Image */}
-      <section className="relative h-[60vh] sm:h-[70vh] lg:h-screen flex items-center overflow-hidden">
+      <section className="relative h-[55vh] sm:h-[65vh] lg:h-[80vh] flex items-center overflow-hidden">
         <Image
           src={heroImage}
           alt={`${city.name}, ${emirate.name}`}

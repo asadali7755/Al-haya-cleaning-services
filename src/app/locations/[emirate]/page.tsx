@@ -55,7 +55,7 @@ export default async function EmiratePage({ params }: PageProps) {
       ])} />
 
       {/* Hero Section with Background Image */}
-      <section className="relative h-[60vh] sm:h-[70vh] lg:h-screen flex items-center overflow-hidden">
+      <section className="relative h-[55vh] sm:h-[65vh] lg:h-[80vh] flex items-center overflow-hidden">
         <Image
           src={emirate.heroImage}
           alt={`${emirate.name} skyline`}
