@@ -76,6 +76,15 @@ h1, h2, h3, h4, h5, h6 {
   animation-play-state: paused;
 }
 
+@media (max-width: 768px) {
+  .animate-marquee {
+    animation-duration: 10s;
+  }
+  .animate-marquee-reverse {
+    animation-duration: 12s;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
