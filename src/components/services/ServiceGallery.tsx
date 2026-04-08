@@ -36,17 +36,17 @@ export function ServiceGallery({ serviceName, images }: ServiceGalleryProps) {
 
       {/* Single Row - Left to Right */}
       <div className="relative overflow-hidden">
-        <div className="flex gap-6 animate-marquee whitespace-nowrap">
+        <div className="flex gap-2 sm:gap-6 animate-marquee whitespace-nowrap">
           {[...allImages, ...allImages, ...allImages, ...allImages].map((src, i) => (
             <div
               key={`g-${i}`}
-              className="relative flex-shrink-0 w-[200px] sm:w-[420px] h-[180px] sm:h-[340px] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer border-2 border-gold/20 hover:border-gold transition-all duration-500"
+              className="relative flex-shrink-0 w-[110px] sm:w-[420px] h-[110px] sm:h-[340px] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer border-2 border-gold/20 hover:border-gold transition-all duration-500"
             >
               <Image
                 src={src}
                 alt={`${serviceName} work sample ${i + 1}`}
                 fill
-                sizes="(max-width: 640px) 200px, 420px"
+                sizes="(max-width: 640px) 110px, 420px"
                 quality={55}
                 loading="lazy"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
