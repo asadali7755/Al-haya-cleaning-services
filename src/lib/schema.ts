@@ -58,7 +58,40 @@ export function generateOrganizationSchema() {
       "@type": "Country",
       name: "United Arab Emirates",
     },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: PHONE,
+      contactType: "customer service",
+      areaServed: "AE",
+      availableLanguage: ["English", "Arabic", "Hindi", "Urdu"],
+    },
+    knowsAbout: [
+      "Villa Cleaning",
+      "Apartment Cleaning",
+      "Deep Cleaning",
+      "Move-In Move-Out Cleaning",
+      "Office Cleaning",
+      "Sofa & Carpet Cleaning",
+      "Window Cleaning",
+      "Post-Construction Cleaning",
+      "Curtains & Blinds Cleaning",
+      "Mattress Deep Cleaning",
+      "Car Interior Cleaning",
+    ],
     sameAs: SOCIAL_PROFILES,
+  };
+}
+
+// ─── WebSite Schema ────────────────────────────────────────────────────────────
+export function generateWebsiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteUrl()}/#website`,
+    name: "Al Haya Cleaning Services",
+    url: siteUrl(),
+    publisher: { "@id": `${siteUrl()}/#organization` },
+    inLanguage: "en-AE",
   };
 }
 

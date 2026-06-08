@@ -5,13 +5,14 @@ import { Testimonials } from "@/components/home/Testimonials";
 import { CTASection } from "@/components/home/CTASection";
 import { SocialMediaSection } from "@/components/home/SocialMediaSection";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { generateLocalBusinessSchema, generateOrganizationSchema, generateFAQSchema } from "@/lib/schema";
+import { generateLocalBusinessSchema, generateOrganizationSchema, generateFAQSchema, generateWebsiteSchema } from "@/lib/schema";
 
 export default function HomePage() {
   return (
     <>
       <JsonLd data={generateLocalBusinessSchema()} />
       <JsonLd data={generateOrganizationSchema()} />
+      <JsonLd data={generateWebsiteSchema()} />
       <JsonLd data={generateFAQSchema()} />
       <Hero />
       <ServiceGrid />
