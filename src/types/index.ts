@@ -10,6 +10,7 @@ export interface Service {
   metaTitle: string;
   metaDescription: string;
   relatedServices?: string[];
+  faqs?: FAQItem[];
 }
 
 export interface Emirate {

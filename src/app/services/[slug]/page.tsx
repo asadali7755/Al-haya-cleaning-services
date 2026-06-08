@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { services, getServiceBySlug } from "@/data/services";
 import { ServiceDetail } from "@/components/services/ServiceDetail";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { generateServiceSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchemaFromList } from "@/lib/schema";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -56,6 +56,9 @@ export default async function ServicePage({ params }: PageProps) {
           { name: service.name, url: `${siteUrl}/services/${service.slug}` },
         ])}
       />
+      {service.faqs && service.faqs.length > 0 && (
+        <JsonLd data={generateFAQSchemaFromList(service.faqs)} />
+      )}
       <ServiceDetail service={service} />
     </>
   );

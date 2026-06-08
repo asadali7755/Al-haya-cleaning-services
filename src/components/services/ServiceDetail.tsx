@@ -42,9 +42,9 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
             {service.name} <span className="text-gold" style={{ textShadow: "0 2px 8px rgba(212, 175, 55, 0.3)" }}>in UAE</span>
           </h1>
-          <h2 className="font-display text-xl md:text-2xl lg:text-3xl font-semibold leading-relaxed text-gray-200 max-w-3xl mx-auto">
+          <p className="font-display text-xl md:text-2xl lg:text-3xl font-semibold leading-relaxed text-gray-200 max-w-3xl mx-auto">
             {service.shortDescription}
-          </h2>
+          </p>
         </div>
       </section>
 
@@ -305,6 +305,30 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
           </div>
         </div>
       </section>
+
+      {/* Service FAQ Section (visible + FAQPage schema in page.tsx) */}
+      {service.faqs && service.faqs.length > 0 && (
+        <section className="py-20 px-4" style={{ backgroundColor: "var(--bg-secondary)" }}>
+          <div className="max-w-3xl mx-auto">
+            <SectionHeading
+              title={`${service.name} — Frequently Asked Questions`}
+              subtitle="Everything you need to know before you book"
+            />
+            <div className="mt-12 space-y-8">
+              {service.faqs.map((f) => (
+                <div key={f.question}>
+                  <h3 className="font-display text-lg md:text-xl font-semibold mb-2" style={{ color: "var(--text-primary)" }}>
+                    {f.question}
+                  </h3>
+                  <p className="leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                    {f.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <div className="py-16 px-4">
         <div className="max-w-4xl mx-auto">

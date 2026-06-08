@@ -20,6 +20,12 @@ export const services: Service[] = [
     metaTitle: "Villa Cleaning Dubai | Professional Villa Cleaners UAE",
     metaDescription: "Top-rated villa cleaning in Dubai & all UAE Emirates. Eco-friendly products, trained & vetted staff. Free quote: +971 56 312 9254.",
     relatedServices: ["deep-cleaning", "sofa-carpet-cleaning", "window-cleaning"],
+    faqs: [
+      { question: "How much does villa cleaning cost in Dubai?", answer: "Villa cleaning prices depend on the size of your villa, the number of bedrooms and bathrooms, and whether it's a one-time or recurring service. Call or WhatsApp +971 56 312 9254 for a free, no-obligation quote tailored to your home." },
+      { question: "What's included in a villa cleaning service?", answer: "We clean all rooms, kitchens, bathrooms, living and dining areas, majlis, balconies, and outdoor terraces. Deep-clean options add kitchen degreasing, bathroom descaling, and detailed work on high-traffic areas." },
+      { question: "Do you bring your own equipment and cleaning products?", answer: "Yes. Our team arrives with all equipment and eco-friendly, family- and pet-safe products — you don't need to provide anything." },
+      { question: "Can I book regular weekly or bi-weekly villa cleaning?", answer: "Absolutely. Many families book us weekly or bi-weekly with the same trusted, vetted team each visit for a consistent standard." },
+    ],
   },
   {
     name: "Apartment Cleaning",
@@ -40,6 +46,12 @@ export const services: Service[] = [
     metaTitle: "Apartment Cleaning Dubai | Studio to Penthouse UAE",
     metaDescription: "Expert apartment cleaning in Dubai & UAE. Studios to penthouses, one-time or weekly schedules. Free quote: +971 56 312 9254.",
     relatedServices: ["deep-cleaning", "move-in-move-out-cleaning", "sofa-carpet-cleaning"],
+    faqs: [
+      { question: "Do you clean studios and small apartments?", answer: "Yes. We clean every size — from compact studios and 1BHK units to spacious 2BHK, 3BHK apartments and penthouses — with the same high standard." },
+      { question: "How long does apartment cleaning take?", answer: "It depends on the size and condition of your apartment. A standard clean for a 1–2 bedroom apartment usually takes a few hours; deep cleans take longer. We'll give you a clear estimate when you book." },
+      { question: "Do you offer move-in and move-out apartment cleaning?", answer: "Yes. Our move-in/move-out service cleans to landlord-inspection standards to help secure your full deposit refund and give you a fresh start." },
+      { question: "Are your cleaning products safe for children and pets?", answer: "Yes. We use eco-friendly, non-toxic products that are safe for families, children, and pets while still delivering a powerful clean." },
+    ],
   },
   {
     name: "Deep Cleaning",
@@ -60,6 +72,12 @@ export const services: Service[] = [
     metaTitle: "Deep Cleaning Dubai | Intensive Home Deep Clean UAE",
     metaDescription: "Deep cleaning in Dubai that reaches every hidden corner. Kitchen degreasing, bathroom descaling, full sanitization. Free quote: +971 56 312 9254.",
     relatedServices: ["mattress-cleaning", "sofa-carpet-cleaning", "curtains-cleaning"],
+    faqs: [
+      { question: "What's the difference between regular and deep cleaning?", answer: "Regular cleaning maintains tidiness, while deep cleaning targets built-up grime behind appliances, inside cabinets, under furniture, and in hard-to-reach areas — including kitchen degreasing and bathroom descaling." },
+      { question: "How often should I deep clean my home?", answer: "Most homes benefit from a deep clean every 3–4 months, or before special events, after renovations, and at move-in or move-out." },
+      { question: "What's included in a deep cleaning service?", answer: "Kitchen exhaust, oven and appliance degreasing; bathroom descaling and grout treatment; floor scrubbing and polishing; window glass and tracks; AC vent areas; and full surface disinfection throughout." },
+      { question: "Do I need to be home during the deep clean?", answer: "Not necessarily. Many customers arrange a key handover so we can clean while they're out. Just let us know what works for you." },
+    ],
   },
   {
     name: "Move-In / Move-Out Cleaning",
@@ -80,6 +98,12 @@ export const services: Service[] = [
     metaTitle: "Move In Move Out Cleaning Dubai | End of Tenancy UAE",
     metaDescription: "Professional move-in & move-out cleaning in Dubai to landlord standards. Helps secure your full deposit refund. Free quote: +971 56 312 9254.",
     relatedServices: ["deep-cleaning", "window-cleaning", "post-construction-cleaning"],
+    faqs: [
+      { question: "Will move-out cleaning help me get my deposit back?", answer: "Yes. We clean to landlord-inspection standards — including wardrobes, cabinets, window tracks, and fixtures — which helps secure your full deposit refund." },
+      { question: "What's included in move-in/move-out cleaning?", answer: "A thorough clean of every room: kitchens and bathrooms scrubbed and sanitized, wardrobes and cabinets wiped inside and out, window tracks, light fixtures, switches, and floors detailed." },
+      { question: "How quickly can you complete the cleaning?", answer: "We offer fast turnaround to match your moving schedule. Tell us your handover or move-in date and we'll arrange a slot that fits." },
+      { question: "Do you clean empty or furnished properties?", answer: "Both. Whether the property is empty for handover or still furnished, we tailor the service to get it move-in or inspection ready." },
+    ],
   },
   {
     name: "Office Cleaning",
@@ -100,6 +124,12 @@ export const services: Service[] = [
     metaTitle: "Office Cleaning Dubai | Commercial Cleaning UAE",
     metaDescription: "Professional office & commercial cleaning in Dubai & UAE. Flexible scheduling, vetted staff, any office size. Free quote: +971 56 312 9254.",
     relatedServices: ["deep-cleaning", "window-cleaning", "post-construction-cleaning"],
+    faqs: [
+      { question: "Can you clean our office outside business hours?", answer: "Yes. We schedule early-morning, evening, or weekend cleans so your workspace is spotless without disrupting the working day." },
+      { question: "Do you offer regular office cleaning contracts?", answer: "Yes. We provide daily, weekly, and custom commercial cleaning schedules scaled to your office size. Call +971 56 312 9254 to discuss." },
+      { question: "What areas of the office do you clean?", answer: "Workstations, meeting rooms, reception areas, pantries and kitchens, and restrooms — using commercial-grade equipment and sanitization." },
+      { question: "Is your cleaning staff vetted and uniformed?", answer: "Yes. Our office cleaners are uniformed, background-checked, and vetted, and they work discreetly within your workplace's procedures." },
+    ],
   },
   {
     name: "Sofa & Carpet Cleaning",
@@ -120,6 +150,12 @@ export const services: Service[] = [
     metaTitle: "Sofa & Carpet Cleaning Dubai | Steam Cleaning UAE",
     metaDescription: "Deep steam cleaning for sofas & carpets in Dubai. Removes stains, allergens & pet odors. Safe for all fabrics. Free quote: +971 56 312 9254.",
     relatedServices: ["mattress-cleaning", "curtains-cleaning", "deep-cleaning"],
+    faqs: [
+      { question: "How long do sofas and carpets take to dry after cleaning?", answer: "Our high-suction extraction leaves furniture and carpets damp-dry, so they're usually ready to use within a few hours depending on fabric and humidity." },
+      { question: "Can you remove tough stains and pet odors?", answer: "Yes. We pre-treat and spot-clean stains, then use deep shampoo and high-temperature steam to lift heavy stains, pet odors, and dust-mite allergens." },
+      { question: "Is the cleaning safe for delicate fabrics like velvet, suede and silk?", answer: "Yes. We pre-test all solutions on your fabric type — velvet, suede, silk, wool, polyester, and more — before starting, using fabric-safe, non-toxic shampoos." },
+      { question: "Do you clean at my home or take items away?", answer: "We clean on-site at your home, so there's no need to remove or transport your sofas and carpets." },
+    ],
   },
   {
     name: "Window Cleaning",
@@ -140,6 +176,12 @@ export const services: Service[] = [
     metaTitle: "Window Cleaning Dubai | Streak-Free Glass Cleaning UAE",
     metaDescription: "Professional window cleaning in Dubai, interior & exterior. Streak-free results, all building heights. Free quote: +971 56 312 9254.",
     relatedServices: ["deep-cleaning", "post-construction-cleaning", "villa-cleaning"],
+    faqs: [
+      { question: "Do you clean exterior windows on higher floors?", answer: "Yes. We have the professional equipment and expertise to safely clean interior and exterior glass — from ground-floor apartments to high-rise buildings." },
+      { question: "Do you clean window frames and tracks too?", answer: "Yes. Every service includes window frames, tracks, and sills — not just the glass — for a complete, detailed finish." },
+      { question: "Will the windows be streak-free?", answer: "Yes. We use professional squeegee techniques and eco-friendly solutions for crystal-clear, streak-free results that maximize natural light." },
+      { question: "Do you clean windows for both homes and offices?", answer: "Yes. We provide window cleaning for residential homes and commercial buildings across Dubai and all UAE Emirates." },
+    ],
   },
   {
     name: "Post-Construction Cleaning",
@@ -160,6 +202,12 @@ export const services: Service[] = [
     metaTitle: "Post Construction Cleaning Dubai | After Renovation UAE",
     metaDescription: "Heavy-duty post-construction cleaning in Dubai. Removes dust, paint marks & debris after renovations. Move-in ready. Free quote: +971 56 312 9254.",
     relatedServices: ["deep-cleaning", "window-cleaning", "move-in-move-out-cleaning"],
+    faqs: [
+      { question: "Do you remove paint splatter, cement, and adhesive marks?", answer: "Yes. Our post-construction cleaning removes construction dust, paint splatter, cement marks, and adhesive residue from floors, windows, and surfaces." },
+      { question: "Will the space be ready to move into afterward?", answer: "Yes. We sanitize bathrooms and kitchens and clean every surface so the property is move-in ready immediately after the job." },
+      { question: "Do you clean villas and commercial fit-outs?", answer: "Both. We handle newly built villas, renovated apartments, and commercial fit-outs, scaling our specialized team to the job." },
+      { question: "Do you use special equipment for construction cleanup?", answer: "Yes. We use heavy-duty equipment designed for post-construction debris, dust, and floor restoration that regular cleaning can't handle." },
+    ],
   },
   {
     name: "Curtains & Blinds Cleaning",
@@ -180,6 +228,12 @@ export const services: Service[] = [
     metaTitle: "Curtains & Blinds Cleaning Dubai | On-Site Steam Cleaning UAE",
     metaDescription: "Professional on-site curtains deep shampoo & steam cleaning in Dubai & UAE. No removal needed, fast drying. Free quote: +971 56 312 9254.",
     relatedServices: ["sofa-carpet-cleaning", "mattress-cleaning", "deep-cleaning"],
+    faqs: [
+      { question: "Do you need to take the curtains down to clean them?", answer: "No. We clean curtains on-site, on the rail — no removal or rehanging needed — using high-pressure dry steam and low-moisture foam." },
+      { question: "How long do curtains take to dry after cleaning?", answer: "Our low-moisture method dries fast, so the room is typically ready to use immediately after cleaning." },
+      { question: "Which types of curtains and blinds can you clean?", answer: "Blackout curtains and sheers, velvet and silk drapes, Roman and roller blinds, and office vertical blinds — for homes and offices across the UAE." },
+      { question: "Does the cleaning sanitize and improve air quality?", answer: "Yes. High-pressure steam kills dust mites, bacteria, and mold, removing trapped allergens and improving your indoor air quality." },
+    ],
   },
   {
     name: "Mattress Deep Cleaning",
@@ -200,6 +254,12 @@ export const services: Service[] = [
     metaTitle: "Mattress Deep Cleaning Dubai | Bed Sanitization UAE",
     metaDescription: "Professional mattress deep shampoo & sanitization in Dubai & UAE. Removes dust mites, stains & odors. Free quote: +971 56 312 9254.",
     relatedServices: ["sofa-carpet-cleaning", "curtains-cleaning", "deep-cleaning"],
+    faqs: [
+      { question: "Does mattress cleaning remove dust mites and allergens?", answer: "Yes. High-power industrial vacuuming plus high-temperature steam eliminate dust mites and allergens — a common cause of morning sneezing and poor sleep." },
+      { question: "Can you remove stains like sweat, urine, or blood?", answer: "Yes. We use fabric-safe enzyme treatments to target yellowing and spills, followed by anti-bacterial shampooing and deodorizing." },
+      { question: "How long does the mattress take to dry?", answer: "Our advanced extraction removes about 90% of moisture, so your mattress dries quickly and is ready to use the same day." },
+      { question: "Is the cleaning safe for babies and sensitive skin?", answer: "Yes. Our solutions are non-toxic and safe for babies, pets, and sensitive skin, while steam kills 99.9% of germs and bed bugs without harsh chemicals." },
+    ],
   },
   {
     name: "Car Seats & Interior Cleaning",
@@ -220,6 +280,12 @@ export const services: Service[] = [
     metaTitle: "Car Seats & Interior Cleaning Dubai | Doorstep Service UAE",
     metaDescription: "Professional car seat & interior deep cleaning in Dubai & UAE. We come to your doorstep. Free quote: +971 56 312 9254.",
     relatedServices: ["sofa-carpet-cleaning", "deep-cleaning", "villa-cleaning"],
+    faqs: [
+      { question: "Do you come to my home or office to clean the car?", answer: "Yes. Our service is fully mobile — we bring professional detailing equipment directly to your doorstep, so there's no car wash queue." },
+      { question: "Can you clean leather and Alcantara seats safely?", answer: "Yes. We work safely on leather, Alcantara, fabric, and standard upholstery using pH-balanced cleaners, and we condition leather to prevent cracking in the UAE heat." },
+      { question: "What's included in a car interior clean?", answer: "Complete cabin vacuuming, deep shampoo of seats, floor carpets and roof lining, steam sanitization of the dashboard, console and door panels, plus seatbelts, headliners, and the trunk." },
+      { question: "How long until the interior is dry and usable?", answer: "Our high-suction fabric extraction means fast drying, so your car is ready to use shortly after the detail is complete." },
+    ],
   },
 ];
 
