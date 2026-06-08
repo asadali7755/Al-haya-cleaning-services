@@ -100,9 +100,9 @@ export default async function CityPage({ params }: PageProps) {
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
             Cleaning Services in <span className="text-gold" style={{ textShadow: "0 2px 8px rgba(212, 175, 55, 0.3)" }}>{city.name}</span>
           </h1>
-          <h2 className="font-display text-xl md:text-2xl lg:text-3xl font-semibold leading-relaxed text-gray-200 max-w-3xl mx-auto">
+          <p className="font-display text-xl md:text-2xl lg:text-3xl font-semibold leading-relaxed text-gray-200 max-w-3xl mx-auto">
             {city.description}
-          </h2>
+          </p>
         </div>
       </section>
 

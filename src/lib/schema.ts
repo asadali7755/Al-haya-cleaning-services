@@ -17,6 +17,23 @@ const AGGREGATE_RATING = {
   worstRating: 1,
 };
 
+// Approx. emirate-center coordinates so geo matches addressRegion per page
+const EMIRATE_GEO: Record<string, { lat: number; lng: number }> = {
+  "Dubai": { lat: 25.2048, lng: 55.2708 },
+  "Abu Dhabi": { lat: 24.4539, lng: 54.3773 },
+  "Sharjah": { lat: 25.3463, lng: 55.4209 },
+  "Ajman": { lat: 25.4052, lng: 55.5136 },
+  "Ras Al Khaimah": { lat: 25.7895, lng: 55.9432 },
+  "Fujairah": { lat: 25.1288, lng: 56.3265 },
+  "Umm Al Quwain": { lat: 25.5647, lng: 55.5552 },
+};
+
+function resolveGeo(city?: string, emirate?: string) {
+  if (emirate && EMIRATE_GEO[emirate]) return EMIRATE_GEO[emirate];
+  if (city && EMIRATE_GEO[city]) return EMIRATE_GEO[city];
+  return EMIRATE_GEO["Dubai"];
+}
+
 // ─── Organization Schema ───────────────────────────────────────────────────────
 export function generateOrganizationSchema() {
   return {
@@ -49,6 +66,7 @@ export function generateOrganizationSchema() {
 export function generateLocalBusinessSchema(city?: string, emirate?: string) {
   const localityLabel = city || "Dubai";
   const regionLabel = emirate || city || "Dubai";
+  const coords = resolveGeo(city, emirate);
 
   // Unique @id per city so Google doesn't see duplicate IDs across pages
   const idSlug = city
@@ -86,8 +104,8 @@ export function generateLocalBusinessSchema(city?: string, emirate?: string) {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 25.2048,
-      longitude: 55.2708,
+      latitude: coords.lat,
+      longitude: coords.lng,
     },
     areaServed: city
       ? [{ "@type": "City", name: city }]

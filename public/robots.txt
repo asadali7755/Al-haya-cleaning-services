@@ -45,4 +45,4 @@ Disallow: /*?s=
 Disallow: /*?author=
 Disallow: /*?replytocom=
 
-Sitemap: https://villadeepcleaning.com/sitemap.xml
+Sitemap: https://www.villadeepcleaning.com/sitemap.xml
