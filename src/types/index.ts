@@ -23,6 +23,11 @@ export interface Emirate {
   metaDescription: string;
 }
 
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 export interface SubCity {
   name: string;
   slug: string;
@@ -31,6 +36,11 @@ export interface SubCity {
   image?: string;
   metaTitle: string;
   metaDescription: string;
+  // ── Optional unique local SEO content (added per city) ──────────────
+  intro?: string;                               // expanded unique intro paragraph
+  sections?: { heading: string; body: string }[]; // unique local content blocks
+  propertyTypes?: string[];                     // property types served locally
+  faqs?: FAQItem[];                             // local FAQs (visible + FAQPage schema)
 }
 
 export interface ContactSubmission {

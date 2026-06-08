@@ -10,7 +10,36 @@ export const emirates: Emirate[] = [
     metaTitle: "Villa & Apartment Cleaning Dubai | Deep Cleaning UAE",
     metaDescription: "Best villa cleaning, apartment cleaning & deep cleaning in Dubai. Trusted by 5000+ families. Free quote: +971 56 312 9254.",
     cities: [
-      { name: "Jumeirah", slug: "jumeirah", emirateSlug: "dubai", image: "/images/areas/dubai/jumeirah.webp", description: "Al Haya delivers premium villa and apartment cleaning in Jumeirah, one of Dubai's most prestigious neighborhoods. Our teams are experienced with the luxury properties and high standards expected in this beachside community.", metaTitle: "Cleaning Services Jumeirah Dubai | Villa & Apartment", metaDescription: "Expert villa & apartment cleaning in Jumeirah, Dubai. Premium cleaning for this prestigious beachside community. Free quote: +971 56 312 9254." },
+      {
+        name: "Jumeirah", slug: "jumeirah", emirateSlug: "dubai", image: "/images/areas/dubai/jumeirah.webp",
+        description: "Al Haya delivers premium villa and apartment cleaning in Jumeirah, one of Dubai's most prestigious neighborhoods. Our teams are experienced with the luxury properties and high standards expected in this beachside community.",
+        metaTitle: "Cleaning Services Jumeirah Dubai | Villa & Apartment",
+        metaDescription: "Expert villa & apartment cleaning in Jumeirah, Dubai. Premium cleaning for this prestigious beachside community. Free quote: +971 56 312 9254.",
+        intro:
+          "Stretching along Jumeirah Beach Road, Jumeirah is home to some of Dubai's most spacious family villas, beachfront residences, and low-rise apartments. These properties — often featuring large plots, private gardens, marble flooring, and floor-to-ceiling glass — demand a cleaning team that understands premium finishes and discreet, reliable service. Al Haya has cleaned homes across Jumeirah 1, 2, and 3 for families who expect consistency, attention to detail, and respect for their space.",
+        sections: [
+          {
+            heading: "Villa & Apartment Cleaning Across Jumeirah 1, 2 & 3",
+            body: "From the established villas of Jumeirah 1 near Mercato and La Mer, to the quieter residential streets of Jumeirah 2 and 3, our teams handle homes of every size. We deep clean living areas, multiple bedrooms and bathrooms, kitchens, majlis areas, balconies, and outdoor terraces — adapting our checklist to your villa's layout. Whether it's a one-time deep clean, a move-in/move-out service, or a recurring weekly visit, the standard never changes.",
+          },
+          {
+            heading: "Specialist Care for Jumeirah's Premium Homes",
+            body: "Many Jumeirah villas feature marble and natural-stone floors, large glass facades, and landscaped outdoor spaces that need careful handling. We use the right products and methods for delicate surfaces — gentle on marble and glass, tough on dirt and grime — and only eco-friendly, family- and pet-safe cleaning solutions. Our trained, vetted staff treat your home with the discretion expected in a community known for privacy.",
+          },
+          {
+            heading: "Fast, Reliable Service Along Jumeirah Beach Road",
+            body: "Because we serve Jumeirah regularly, scheduling is easy and our response times are quick — including same-day availability for urgent cleans. Book by call or WhatsApp on +971 56 312 9254 and we'll confirm a time that fits around your day, bringing all equipment and supplies with us.",
+          },
+        ],
+        propertyTypes: ["Beachfront villas", "Family villas (Jumeirah 1, 2 & 3)", "Townhouses", "Low-rise apartments", "Holiday & rental homes"],
+        faqs: [
+          { question: "Do you cover all of Jumeirah, including Jumeirah 1, 2 and 3?", answer: "Yes. Al Haya serves the entire Jumeirah area — Jumeirah 1, 2, and 3 — along Jumeirah Beach Road and the surrounding residential streets, covering both villas and apartments." },
+          { question: "How quickly can your team reach Jumeirah?", answer: "We serve Jumeirah regularly, so we can usually schedule a visit the same day or next day. Call or WhatsApp +971 56 312 9254 and we'll confirm the earliest available slot." },
+          { question: "Do you clean large villas with gardens and outdoor terraces?", answer: "Absolutely. Our villa cleaning covers all indoor rooms plus balconies, terraces, and outdoor living areas. We tailor the service to your villa's size and layout, whether it's a one-time deep clean or a recurring visit." },
+          { question: "Can you care for marble and natural-stone floors common in Jumeirah villas?", answer: "Yes. We use surface-safe products and methods designed for marble, natural stone, and glass, so premium finishes are cleaned thoroughly without damage." },
+          { question: "Do you offer regular weekly cleaning for Jumeirah residents?", answer: "Yes. Many Jumeirah families book us weekly or bi-weekly. We assign consistent, trained staff so you get the same reliable standard every visit." },
+        ],
+      },
       { name: "Al Barsha", slug: "al-barsha", emirateSlug: "dubai", image: "/images/areas/dubai/jumeirah.webp", description: "Serving the diverse residential community of Al Barsha with thorough apartment and villa cleaning. From Al Barsha 1 to Al Barsha South, we keep homes spotless across this popular Dubai neighborhood.", metaTitle: "Cleaning Services Al Barsha Dubai | Home Cleaners", metaDescription: "Reliable villa & apartment cleaning in Al Barsha, Dubai. Serving Al Barsha 1, 2, 3 & South. Free quote: +971 56 312 9254." },
       { name: "Downtown Dubai", slug: "downtown-dubai", emirateSlug: "dubai", image: "/images/areas/dubai/downtown-dubai.webp", description: "Professional cleaning for the iconic towers and residences of Downtown Dubai. We serve apartments in Burj Khalifa district, Boulevard, and surrounding developments with efficient, high-quality cleaning.", metaTitle: "Cleaning Services Downtown Dubai | Burj Khalifa Area", metaDescription: "Professional apartment cleaning in Downtown Dubai. Burj Khalifa district, Boulevard & surrounding areas. Free quote: +971 56 312 9254." },
       { name: "Dubai Marina", slug: "dubai-marina", emirateSlug: "dubai", image: "/images/areas/dubai/dubai-marina.webp", description: "Al Haya's apartment cleaning is perfectly suited for Dubai Marina's high-rise lifestyle. Our teams efficiently clean studios to penthouses, working around your schedule in this vibrant waterfront community.", metaTitle: "Cleaning Services Dubai Marina | Apartment Cleaners", metaDescription: "Expert apartment cleaning in Dubai Marina. Studios to penthouses, fast turnaround, flexible scheduling. Free quote: +971 56 312 9254." },

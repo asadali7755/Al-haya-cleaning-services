@@ -5,7 +5,7 @@ import Image from "next/image";
 import { emirates, getEmirateBySlug, getCityBySlug } from "@/data/locations";
 import { services } from "@/data/services";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { generateLocalBusinessSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import { generateLocalBusinessSchema, generateBreadcrumbSchema, generateFAQSchemaFromList } from "@/lib/schema";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { ChevronRight } from "lucide-react";
@@ -70,6 +70,9 @@ export default async function CityPage({ params }: PageProps) {
         { name: emirate.name, url: `${siteUrl}/locations/${emirate.slug}` },
         { name: city.name, url: `${siteUrl}/locations/${emirate.slug}/${city.slug}` },
       ])} />
+      {city.faqs && city.faqs.length > 0 && (
+        <JsonLd data={generateFAQSchemaFromList(city.faqs)} />
+      )}
 
       {/* Hero Section with Background Image */}
       <section className="relative h-[55vh] sm:h-[65vh] lg:h-[80vh] flex items-center overflow-hidden">
@@ -106,6 +109,43 @@ export default async function CityPage({ params }: PageProps) {
         </div>
       </section>
 
+      {/* Unique Local SEO Content */}
+      {(city.intro || (city.sections && city.sections.length > 0)) && (
+        <section className="py-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            {city.intro && (
+              <p className="text-lg leading-relaxed mb-10" style={{ color: "var(--text-secondary)" }}>
+                {city.intro}
+              </p>
+            )}
+            {city.sections?.map((s) => (
+              <div key={s.heading} className="mb-8">
+                <h2 className="font-display text-2xl md:text-3xl font-bold mb-3" style={{ color: "var(--text-primary)" }}>
+                  {s.heading}
+                </h2>
+                <p className="leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                  {s.body}
+                </p>
+              </div>
+            ))}
+            {city.propertyTypes && city.propertyTypes.length > 0 && (
+              <div className="mt-10">
+                <h2 className="font-display text-2xl md:text-3xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+                  Properties We Clean in {city.name}
+                </h2>
+                <div className="flex flex-wrap gap-3">
+                  {city.propertyTypes.map((p) => (
+                    <span key={p} className="px-4 py-2 rounded-full text-sm font-medium border border-gold/40 bg-gold/10 text-gold">
+                      {p}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
       {/* Services Section with Image Cards */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
@@ -132,6 +172,30 @@ export default async function CityPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Local FAQ Section (visible + FAQPage schema) */}
+      {city.faqs && city.faqs.length > 0 && (
+        <section className="py-16 px-4" style={{ backgroundColor: "var(--bg-secondary)" }}>
+          <div className="max-w-3xl mx-auto">
+            <SectionHeading
+              title={`Cleaning in ${city.name} — FAQs`}
+              subtitle="Common questions from local residents"
+            />
+            <div className="mt-12 space-y-8">
+              {city.faqs.map((f) => (
+                <div key={f.question}>
+                  <h3 className="font-display text-lg md:text-xl font-semibold mb-2" style={{ color: "var(--text-primary)" }}>
+                    {f.question}
+                  </h3>
+                  <p className="leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                    {f.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="py-16 px-4 bg-gold/10 text-center">
         <div className="max-w-2xl mx-auto">
