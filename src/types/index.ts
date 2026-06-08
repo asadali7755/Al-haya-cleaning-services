@@ -44,6 +44,30 @@ export interface SubCity {
   faqs?: FAQItem[];                             // local FAQs (visible + FAQPage schema)
 }
 
+export interface BlogSection {
+  heading: string;
+  paragraphs?: string[];
+  bullets?: string[];
+}
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  excerpt: string;
+  metaTitle: string;
+  metaDescription: string;
+  image: string;
+  category: string;
+  datePublished: string; // ISO date
+  dateModified?: string;
+  readingTime: string;
+  keywords: string[];
+  intro: string;
+  sections: BlogSection[];
+  faqs?: FAQItem[];
+  relatedServices?: string[];
+}
+
 export interface ContactSubmission {
   name: string;
   email: string;

@@ -303,6 +303,35 @@ export function generateFAQSchemaFromList(
   };
 }
 
+// ─── Blog Article Schema ───────────────────────────────────────────────────────
+export function generateArticleSchema(post: {
+  slug: string;
+  title: string;
+  metaDescription: string;
+  image: string;
+  datePublished: string;
+  dateModified?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${siteUrl()}/blog/${post.slug}#article`,
+    headline: post.title,
+    description: post.metaDescription,
+    image: `${siteUrl()}${post.image}`,
+    datePublished: post.datePublished,
+    dateModified: post.dateModified || post.datePublished,
+    author: {
+      "@type": "Organization",
+      name: "Al Haya Cleaning Services",
+      url: siteUrl(),
+    },
+    publisher: { "@id": `${siteUrl()}/#organization` },
+    mainEntityOfPage: `${siteUrl()}/blog/${post.slug}`,
+    inLanguage: "en-AE",
+  };
+}
+
 // ─── Breadcrumb Schema ─────────────────────────────────────────────────────────
 export function generateBreadcrumbSchema(items: { name: string; url: string }[]) {
   return {
