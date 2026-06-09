@@ -1,48 +1,15 @@
+# robots.txt — villadeepcleaning.com
+#
+# Only internal/non-content paths are blocked. Legacy WordPress URLs from the
+# previous site on this domain are intentionally NOT blocked here so Googlebot
+# can crawl them, see their 301-redirect / 404 (handled in next.config.ts), and
+# drop them cleanly from the index. Blocking them would prevent Google from
+# processing the removal.
+
 User-agent: *
 Allow: /
 
-# ── Block Next.js internals & API ──────────────────────────────────────────────
 Disallow: /api/
 Disallow: /_next/
-
-# ── Block old WordPress date-based URLs (from Hostinger) ───────────────────────
-Disallow: /2020/
-Disallow: /2021/
-Disallow: /2022/
-Disallow: /2023/
-Disallow: /2024/
-Disallow: /2025/
-
-# ── Block WordPress taxonomy & archive pages ────────────────────────────────────
-Disallow: /category/
-Disallow: /tag/
-Disallow: /author/
-Disallow: /page/
-Disallow: /feed/
-Disallow: /feed
-Disallow: /comments/
-
-# ── Block WordPress admin & core files ─────────────────────────────────────────
-Disallow: /wp-admin/
-Disallow: /wp-content/
-Disallow: /wp-login.php
-Disallow: /wp-json/
-
-# ── Block old WordPress sitemaps ────────────────────────────────────────────────
-Disallow: /wp-sitemap.xml
-Disallow: /wp-sitemap-posts-post-1.xml
-Disallow: /wp-sitemap-posts-page-1.xml
-Disallow: /wp-sitemap-taxonomies-category-1.xml
-Disallow: /sitemap_index.xml
-Disallow: /post-sitemap.xml
-Disallow: /page-sitemap.xml
-
-# ── Block WordPress query strings ───────────────────────────────────────────────
-Disallow: /*?p=
-Disallow: /*?page_id=
-Disallow: /*?cat=
-Disallow: /*?s=
-Disallow: /*?author=
-Disallow: /*?replytocom=
 
 Sitemap: https://www.villadeepcleaning.com/sitemap.xml
