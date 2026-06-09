@@ -5,6 +5,12 @@ import { services } from "@/data/services";
 import { Button } from "@/components/ui/Button";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 
+declare global {
+  interface Window {
+    dataLayer?: Record<string, unknown>[];
+  }
+}
+
 interface FormData {
   name: string;
   email: string;

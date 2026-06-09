@@ -5,7 +5,6 @@ import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
-import { ConversionTracking } from "@/components/seo/ConversionTracking";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -108,7 +107,6 @@ export default function RootLayout({
           <main className="min-h-screen">{children}</main>
           <Footer />
           <WhatsAppButton />
-          <ConversionTracking />
         </ThemeProvider>
       </body>
     </html>
