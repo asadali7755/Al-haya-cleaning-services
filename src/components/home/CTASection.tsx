@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/Button";
+import { TrustBadges } from "@/components/ui/TrustBadges";
 import { Phone } from "lucide-react";
 
 export function CTASection() {
@@ -24,6 +25,7 @@ export function CTASection() {
             WhatsApp Us
           </Button>
         </div>
+        <TrustBadges className="mt-10" />
       </div>
     </section>
   );

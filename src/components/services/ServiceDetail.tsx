@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { Service } from "@/types";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { TrustBadges } from "@/components/ui/TrustBadges";
 import { Check, ChevronRight, MapPin, Shield, Clock, Award, Sparkles, Users, Leaf, ThumbsUp, Star, ArrowRight } from "lucide-react";
 import { emirates } from "@/data/locations";
 import { services } from "@/data/services";
@@ -351,6 +352,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
                 WhatsApp Us
               </Button>
             </div>
+            <TrustBadges className="mt-8" />
           </div>
         </div>
       </div>

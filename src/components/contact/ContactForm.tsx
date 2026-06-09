@@ -73,6 +73,15 @@ Service: ${serviceName}
 
 Message: ${formData.message}`;
       const waUrl = `https://wa.me/${whatsappNum.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(text)}`;
+      // GA4/GTM conversion event for a submitted enquiry
+      if (typeof window !== "undefined") {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "generate_lead",
+          lead_service: serviceName,
+          page_path: window.location.pathname,
+        });
+      }
       window.open(waUrl, "_blank");
       setStatus("success");
       setFormData({ name: "", email: "", phone: "", service: "", message: "" });
