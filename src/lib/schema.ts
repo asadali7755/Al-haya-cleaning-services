@@ -9,13 +9,8 @@ const SOCIAL_PROFILES = [
 
 const PHONE = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971563129254";
 
-const AGGREGATE_RATING = {
-  "@type": "AggregateRating",
-  ratingValue: 4.9,
-  reviewCount: 500,
-  bestRating: 5,
-  worstRating: 1,
-};
+// aggregateRating intentionally omitted — no fake ratings. Add a real
+// AggregateRating only when genuine, visible reviews are shown on-page.
 
 // Approx. emirate-center coordinates so geo matches addressRegion per page
 const EMIRATE_GEO: Record<string, { lat: number; lng: number }> = {
@@ -155,7 +150,6 @@ export function generateLocalBusinessSchema(city?: string, emirate?: string) {
     currenciesAccepted: "AED",
     paymentAccepted: "Cash, Credit Card, Bank Transfer",
     sameAs: SOCIAL_PROFILES,
-    aggregateRating: AGGREGATE_RATING,
     // openingHoursSpecification must be an ARRAY, not a plain object
     openingHoursSpecification: [
       {
@@ -208,7 +202,6 @@ export function generateServiceSchema(service: {
       name: "Al Haya Cleaning Services",
       url: siteUrl(),
       telephone: PHONE,
-      aggregateRating: AGGREGATE_RATING,
       address: {
         "@type": "PostalAddress",
         addressLocality: "Dubai",

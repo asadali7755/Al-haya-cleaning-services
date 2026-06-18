@@ -39,7 +39,7 @@ function MapSection() {
         </div>
         <div className="rounded-2xl overflow-hidden shadow-lg" style={{ border: "1px solid var(--border-color)" }}>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.2426037257887!2d55.362276599999994!3d25.2960519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5dc6fe655c83%3A0x2790bef8b91a957!2sAL%20HAYA%20cleaning%20services!5e0!3m2!1sen!2s!4v1777990342134!5m2!1sen!2s"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.4827157825976!2d55.280624200000005!3d25.1869387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f694b563b87dd%3A0x3ad372f6419ced76!2sServedubai!5e0!3m2!1sen!2s!4v1781791917673!5m2!1sen!2s"
             width="100%"
             height="400"
             style={{ border: 0, display: "block" }}
