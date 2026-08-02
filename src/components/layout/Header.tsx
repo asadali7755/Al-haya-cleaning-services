@@ -157,7 +157,7 @@ export function Header() {
           {/* Call button */}
           <a
             href="tel:+971563129254"
-            className="flex items-center gap-2 px-4 py-2 rounded-full font-semibold text-sm transition-all hover:scale-105"
+            className="flex items-center gap-2 px-4 py-2 rounded-full font-semibold text-sm whitespace-nowrap transition-all hover:scale-105"
             style={{
               background: "var(--color-gold)",
               color: "#0f1419",
@@ -228,7 +228,7 @@ export function Header() {
           {/* Call button in mobile menu */}
           <a
             href="tel:+971563129254"
-            className="flex items-center gap-2 px-4 py-3 rounded-full font-semibold justify-center"
+            className="flex items-center gap-2 px-4 py-3 rounded-full font-semibold justify-center whitespace-nowrap"
             style={{
               background: "var(--color-gold)",
               color: "#0f1419",
