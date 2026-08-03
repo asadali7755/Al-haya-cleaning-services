@@ -6,6 +6,7 @@ import { emirates, getEmirateBySlug } from "@/data/locations";
 import { services } from "@/data/services";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { generateLocalBusinessSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import { buildTitle } from "@/lib/metadata";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { ChevronRight } from "lucide-react";
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const siteUrl = process.env.SITE_URL || "http://localhost:3000";
   return {
-    title: `${emirate.metaTitle} | Al Haya Cleaning Services`,
+    title: buildTitle(emirate.metaTitle),
     description: emirate.metaDescription,
     keywords: [
       `cleaning services ${emirate.name}`,
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       `maid service ${emirate.name}`,
     ],
     openGraph: {
-      title: `${emirate.metaTitle} | Al Haya Cleaning Services`,
+      title: buildTitle(emirate.metaTitle),
       description: emirate.metaDescription,
       url: `${siteUrl}/locations/${emirate.slug}`,
       images: [{ url: emirate.heroImage }],

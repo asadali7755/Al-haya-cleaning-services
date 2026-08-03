@@ -6,9 +6,10 @@ import { emirates, getEmirateBySlug, getCityBySlug } from "@/data/locations";
 import { services } from "@/data/services";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { generateLocalBusinessSchema, generateBreadcrumbSchema, generateFAQSchemaFromList } from "@/lib/schema";
+import { buildTitle } from "@/lib/metadata";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, MapPin } from "lucide-react";
 
 interface PageProps {
   params: Promise<{ emirate: string; city: string }>;
@@ -32,7 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const siteUrl = process.env.SITE_URL || "http://localhost:3000";
   return {
-    title: `${city.metaTitle} | Al Haya Cleaning Services`,
+    title: buildTitle(city.metaTitle),
     description: city.metaDescription,
     keywords: [
       `cleaning services ${city.name} ${emirate.name}`,
@@ -43,7 +44,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       `maid service ${city.name}`,
     ],
     openGraph: {
-      title: `${city.metaTitle} | Al Haya Cleaning Services`,
+      title: buildTitle(city.metaTitle),
       description: city.metaDescription,
       url: `${siteUrl}/locations/${eSlug}/${cSlug}`,
       images: [{ url: city.image || emirate.heroImage }],
@@ -172,6 +173,45 @@ export default async function CityPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Nearby Areas — internal links to sibling cities in the same emirate */}
+      {(() => {
+        const nearby = emirate.cities.filter((c) => c.slug !== city.slug);
+        if (nearby.length === 0) return null;
+        return (
+          <section className="py-16 px-4" style={{ backgroundColor: "var(--bg-secondary)" }}>
+            <div className="max-w-7xl mx-auto">
+              <SectionHeading
+                title="Nearby Areas We Serve"
+                subtitle={`Also serving these areas across ${emirate.name}`}
+              />
+              <div className="flex flex-wrap gap-3 mt-10 justify-center">
+                {nearby.map((c) => (
+                  <Link
+                    key={c.slug}
+                    href={`/locations/${emirate.slug}/${c.slug}`}
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-gold/30 bg-gold/5 hover:bg-gold hover:border-gold transition-colors group"
+                  >
+                    <MapPin className="w-4 h-4 text-gold group-hover:text-white transition-colors" />
+                    <span className="font-medium text-gold group-hover:text-white transition-colors">
+                      Cleaning Services in {c.name}
+                    </span>
+                  </Link>
+                ))}
+                <Link
+                  href={`/locations/${emirate.slug}`}
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-gold/30 hover:bg-gold hover:border-gold transition-colors group"
+                  style={{ color: "var(--text-secondary)" }}
+                >
+                  <span className="font-medium group-hover:text-white transition-colors">
+                    View All of {emirate.name} →
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* Local FAQ Section (visible + FAQPage schema) */}
       {city.faqs && city.faqs.length > 0 && (

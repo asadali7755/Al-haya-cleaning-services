@@ -4,6 +4,7 @@ import { services, getServiceBySlug } from "@/data/services";
 import { ServiceDetail } from "@/components/services/ServiceDetail";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchemaFromList } from "@/lib/schema";
+import { buildTitle } from "@/lib/metadata";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -23,11 +24,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const siteUrl = process.env.SITE_URL || "http://localhost:3000";
 
   return {
-    title: `${service.metaTitle} | Al Haya Cleaning Services`,
+    title: buildTitle(service.metaTitle),
     description: service.metaDescription,
     keywords: service.keywords,
     openGraph: {
-      title: `${service.metaTitle} | Al Haya Cleaning Services`,
+      title: buildTitle(service.metaTitle),
       description: service.metaDescription,
       url: `${siteUrl}/services/${service.slug}`,
       type: "website",
