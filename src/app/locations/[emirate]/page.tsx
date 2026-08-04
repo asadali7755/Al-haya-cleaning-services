@@ -5,7 +5,7 @@ import Image from "next/image";
 import { emirates, getEmirateBySlug } from "@/data/locations";
 import { services } from "@/data/services";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { generateLocalBusinessSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import { generateLocalBusinessSchema, generateBreadcrumbSchema, generateFAQSchemaFromList } from "@/lib/schema";
 import { buildTitle } from "@/lib/metadata";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
@@ -62,6 +62,9 @@ export default async function EmiratePage({ params }: PageProps) {
         { name: "Locations", url: `${siteUrl}/#locations` },
         { name: emirate.name, url: `${siteUrl}/locations/${emirate.slug}` },
       ])} />
+      {emirate.faqs && emirate.faqs.length > 0 && (
+        <JsonLd data={generateFAQSchemaFromList(emirate.faqs)} />
+      )}
 
       {/* Hero Section with Background Image */}
       <section className="relative h-[55vh] sm:h-[65vh] lg:h-[80vh] flex items-center overflow-hidden">
@@ -95,6 +98,29 @@ export default async function EmiratePage({ params }: PageProps) {
           </p>
         </div>
       </section>
+
+      {/* Unique Emirate-Level SEO Content */}
+      {(emirate.intro || (emirate.sections && emirate.sections.length > 0)) && (
+        <section className="py-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            {emirate.intro && (
+              <p className="text-lg leading-relaxed mb-10" style={{ color: "var(--text-secondary)" }}>
+                {emirate.intro}
+              </p>
+            )}
+            {emirate.sections?.map((s) => (
+              <div key={s.heading} className="mb-8">
+                <h2 className="font-display text-2xl md:text-3xl font-bold mb-3" style={{ color: "var(--text-primary)" }}>
+                  {s.heading}
+                </h2>
+                <p className="leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                  {s.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Areas Section with Image Cards */}
       <section className="py-16 px-4">
@@ -150,6 +176,30 @@ export default async function EmiratePage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Emirate FAQ Section (visible + FAQPage schema) */}
+      {emirate.faqs && emirate.faqs.length > 0 && (
+        <section className="py-16 px-4" style={{ backgroundColor: "var(--bg-secondary)" }}>
+          <div className="max-w-3xl mx-auto">
+            <SectionHeading
+              title={`Cleaning in ${emirate.name} — FAQs`}
+              subtitle="Common questions from local residents"
+            />
+            <div className="mt-12 space-y-8">
+              {emirate.faqs.map((f) => (
+                <div key={f.question}>
+                  <h3 className="font-display text-lg md:text-xl font-semibold mb-2" style={{ color: "var(--text-primary)" }}>
+                    {f.question}
+                  </h3>
+                  <p className="leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                    {f.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="py-16 px-4 bg-gold/10 text-center">
         <div className="max-w-2xl mx-auto">

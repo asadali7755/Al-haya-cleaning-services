@@ -9,6 +9,23 @@ export const emirates: Emirate[] = [
     heroImage: "/images/heroes/dubai-hero.webp",
     metaTitle: "Villa & Apartment Cleaning Dubai | Deep Cleaning UAE",
     metaDescription: "Best villa cleaning, apartment cleaning & deep cleaning in Dubai. Trusted by 5000+ families. Free quote: +971 56 312 9254.",
+    intro: "Dubai is where Al Haya works most — our teams are on the road here every day, covering everything from beachfront Jumeirah villas to high-rise Marina apartments and fast-turnaround Business Bay offices. With eight core zones covered directly, Dubai residents get the fastest response times and the deepest local knowledge of any emirate we serve.",
+    sections: [
+      {
+        heading: "Cleaning Every Corner of Dubai",
+        body: "From the low-rise villas of Jumeirah, Al Barsha, and Palm Jumeirah to the high-rise towers of Downtown Dubai, Dubai Marina, JBR, and Business Bay, our teams adapt to every building type — including the service-elevator bookings, NOC forms, and access windows that many Dubai towers require.",
+      },
+      {
+        heading: "Fast, Local Response Across the Emirate",
+        body: "Because we're already working across Dubai daily, scheduling is quick — same-day or next-day slots are usually available regardless of which neighborhood you're in. Whether it's a one-time deep clean, a move-in/move-out job, or a recurring weekly visit, the same trained team can serve you consistently.",
+      },
+    ],
+    faqs: [
+      { question: "Which areas of Dubai do you cover?", answer: "We serve Jumeirah, Al Barsha, Downtown Dubai, Dubai Marina, Business Bay, Palm Jumeirah, JBR, Silicon Oasis, and every other Dubai neighborhood. Call or WhatsApp +971 56 312 9254 to confirm your area." },
+      { question: "Can you clean high-rise apartments with building access rules?", answer: "Yes. Our teams are experienced with Dubai's tower access procedures, including service-elevator bookings and NOC requirements common in Downtown, Marina, and JBR buildings." },
+      { question: "Do you offer same-day cleaning in Dubai?", answer: "In most Dubai neighborhoods, yes. Because we're already working across the city daily, same-day and next-day slots are usually available — call or WhatsApp +971 56 312 9254 to check." },
+      { question: "Do you handle move-out cleaning for Dubai rentals?", answer: "Yes. Our move-in/move-out cleaning is designed to meet the condition standards landlords and property managers expect before returning your security deposit." },
+    ],
     cities: [
       {
         name: "Jumeirah", slug: "jumeirah", emirateSlug: "dubai", image: "/images/areas/dubai/jumeirah.webp",
@@ -225,6 +242,23 @@ export const emirates: Emirate[] = [
     heroImage: "/images/heroes/abu-dhabi-hero.webp",
     metaTitle: "Cleaning Services in Abu Dhabi",
     metaDescription: "Professional cleaning services in Abu Dhabi. Villa, apartment, and office cleaning across the UAE capital.",
+    intro: "As the UAE capital, Abu Dhabi is home to some of the country's most prestigious addresses — from the island communities of Al Reem and Saadiyat to the family villas of Khalifa City and the cultural landmarks along the Corniche. Al Haya's Abu Dhabi teams are trained to match that standard on every visit.",
+    sections: [
+      {
+        heading: "Serving the Capital's Islands and Suburbs",
+        body: "Abu Dhabi's residential map spans waterfront apartment towers on Al Reem and Saadiyat Island, spacious family villas in Khalifa City, and Corniche-area residences. We tailor our approach to each — steam and vapor techniques for tower apartments, and full-property deep cleans for Khalifa City villas with gardens and majlis areas.",
+      },
+      {
+        heading: "Reaching Al Ain and the Wider Emirate",
+        body: "Beyond the city itself, we also serve Al Ain and surrounding communities, bringing the same trained staff, eco-friendly products, and satisfaction guarantee to every corner of the emirate — residential and commercial alike.",
+      },
+    ],
+    faqs: [
+      { question: "Do you serve Al Reem Island and Saadiyat Island apartments?", answer: "Yes. We regularly clean apartments and villas across Al Reem Island, Saadiyat Island, Khalifa City, and the Corniche area — call or WhatsApp +971 56 312 9254 to book." },
+      { question: "Do you cover Al Ain as well as Abu Dhabi city?", answer: "Yes, our Abu Dhabi coverage extends to Al Ain and the surrounding communities, not just the capital's downtown areas." },
+      { question: "What cleaning services do you offer in Abu Dhabi?", answer: "The full range — villa cleaning, apartment cleaning, deep cleaning, move-in/move-out, office cleaning, sofa & carpet cleaning, and more — the same services we offer across all seven Emirates." },
+      { question: "Can I book a recurring weekly clean in Abu Dhabi?", answer: "Absolutely. Many Abu Dhabi clients book us weekly or bi-weekly with a consistent, trained team for every visit." },
+    ],
     cities: [
       {
         name: "Al Reem Island", slug: "al-reem-island", emirateSlug: "abu-dhabi", image: "/images/areas/abu-dhabi/al-reem-island.webp",
@@ -361,6 +395,23 @@ export const emirates: Emirate[] = [
     heroImage: "/images/locations/sharjah.webp",
     metaTitle: "Cleaning Services in Sharjah",
     metaDescription: "Affordable professional cleaning in Sharjah. Apartments, villas, and offices cleaned to the highest standards.",
+    intro: "Sharjah, the UAE's cultural capital, mixes established residential districts like Al Nahda and Al Majaz with fast-growing communities like Muwaileh. Al Haya serves families and businesses across the emirate, keeping the same eco-friendly products and trained staff we use everywhere else in the UAE.",
+    sections: [
+      {
+        heading: "From Al Nahda to Muwaileh",
+        body: "Whether it's an apartment near Al Nahda's Dubai border, a villa in Al Khan close to the Corniche, or a newer home in Muwaileh, our teams know Sharjah's neighborhoods and adjust their approach to each property type — apartments, townhouses, and standalone villas alike.",
+      },
+      {
+        heading: "Reliable Value for Sharjah Households",
+        body: "Sharjah families often look for consistent quality at a fair price, and that's exactly what our standard service delivers — no hidden add-ons, the same trained team on repeat visits, and eco-friendly products safe for kids and pets.",
+      },
+    ],
+    faqs: [
+      { question: "Which parts of Sharjah do you cover?", answer: "We serve Al Nahda, Al Majaz, Al Khan, Muwaileh, and other Sharjah communities. Call or WhatsApp +971 56 312 9254 to confirm your area." },
+      { question: "Is cleaning in Sharjah more affordable than Dubai?", answer: "Our pricing is based on property size and service type rather than emirate, but Sharjah properties are often more affordable to clean simply due to typical unit sizes. Contact us for an exact quote." },
+      { question: "Do you clean both apartments and villas in Sharjah?", answer: "Yes, we handle every property type across Sharjah — from Al Nahda apartments to Al Khan and Muwaileh villas." },
+      { question: "How fast can you schedule a clean in Sharjah?", answer: "We regularly serve Sharjah, so same-day or next-day appointments are usually available. Call or WhatsApp +971 56 312 9254 to check availability." },
+    ],
     cities: [
       {
         name: "Al Nahda", slug: "al-nahda", emirateSlug: "sharjah", image: "/images/areas/sharjah/al-nahda.webp",
@@ -472,6 +523,23 @@ export const emirates: Emirate[] = [
     heroImage: "/images/heroes/ajman-hero.webp",
     metaTitle: "Cleaning Services in Ajman",
     metaDescription: "Affordable professional cleaning in Ajman. Home and office cleaning across the emirate.",
+    intro: "Ajman is the UAE's smallest emirate, but its residential communities — from Al Rashidiya to the high-density towers of Emirates City — are home to thousands of families who deserve the same professional cleaning standard as anywhere else in the country. Al Haya serves the whole emirate directly.",
+    sections: [
+      {
+        heading: "Covering Ajman's Growing Communities",
+        body: "Al Rashidiya, Al Nuaimia, and Emirates City each have their own mix of apartments, townhouses, and villas. Our teams bring the full range of services — from routine apartment cleaning to intensive move-in/move-out jobs — to every one of these areas.",
+      },
+      {
+        heading: "Affordable Doesn't Mean Compromised",
+        body: "Ajman households often look for cost-effective service, and we deliver that without cutting corners — the same eco-friendly products, trained staff, and satisfaction guarantee as our Dubai and Abu Dhabi clients get.",
+      },
+    ],
+    faqs: [
+      { question: "Do you serve all areas of Ajman?", answer: "Yes, including Al Rashidiya, Al Nuaimia, and Emirates City. Call or WhatsApp +971 56 312 9254 to confirm coverage for your specific building." },
+      { question: "What cleaning services are available in Ajman?", answer: "The full range — villa, apartment, deep cleaning, move-in/move-out, sofa & carpet, mattress cleaning, and more, at the same quality standard as our Dubai service." },
+      { question: "Can I get a recurring cleaning schedule in Ajman?", answer: "Yes, weekly and bi-weekly recurring cleaning is available with the same assigned team for consistency." },
+      { question: "How do I book a cleaning service in Ajman?", answer: "Call or WhatsApp +971 56 312 9254 for a free, no-obligation quote, or fill out our contact form and we'll confirm a time that suits you." },
+    ],
     cities: [
       {
         name: "Al Rashidiya", slug: "al-rashidiya", emirateSlug: "ajman", image: "/images/areas/ajman/al-rashidiya.webp",
@@ -558,6 +626,23 @@ export const emirates: Emirate[] = [
     heroImage: "/images/heroes/umm-al-quwain-hero.webp",
     metaTitle: "Cleaning Services in Umm Al Quwain",
     metaDescription: "Professional cleaning in Umm Al Quwain. Villa, apartment, and commercial cleaning services.",
+    intro: "Umm Al Quwain is one of the UAE's quieter emirates, with a mix of waterfront communities like UAQ Marina and long-established residential areas around the Old Town and Al Salamah. Al Haya makes the trip regularly, so residents here get the same professional standard as bigger, busier emirates.",
+    sections: [
+      {
+        heading: "Waterfront to Old Town Coverage",
+        body: "From newer developments around UAQ Marina to the established homes of Old Town and Al Salamah, our teams handle villas, apartments, and small commercial spaces with the same thorough approach — dusting, degreasing, sanitizing, and detailing every room.",
+      },
+      {
+        heading: "Consistent Service, Even in a Quieter Emirate",
+        body: "Because Umm Al Quwain sees fewer service providers than Dubai or Sharjah, residents often struggle to find reliable, professional cleaners. Al Haya schedules regular visits to the emirate so booking ahead gets you the same trained team every time.",
+      },
+    ],
+    faqs: [
+      { question: "Do you really serve Umm Al Quwain, or only bigger emirates?", answer: "Yes, we serve UAQ directly — UAQ Marina, Old Town, Al Salamah, and surrounding areas. Call or WhatsApp +971 56 312 9254 to book." },
+      { question: "How far in advance should I book in Umm Al Quwain?", answer: "A day or two ahead is recommended since UAQ has fewer scheduled visits than Dubai, but we'll always try to accommodate urgent requests." },
+      { question: "What properties do you clean in UAQ?", answer: "Villas, apartments, and small commercial spaces across UAQ Marina, Old Town, and Al Salamah — the same services offered throughout the UAE." },
+      { question: "Is pricing different for Umm Al Quwain?", answer: "Pricing is based on property size and service type, not location. Contact us for a free, tailored quote." },
+    ],
     cities: [
       {
         name: "UAQ Marina", slug: "uaq-marina", emirateSlug: "umm-al-quwain", image: "/images/areas/umm-al-quwain/uaq-marina (2).webp",
@@ -644,6 +729,23 @@ export const emirates: Emirate[] = [
     heroImage: "/images/heroes/ras-al-khaimah-hero.webp",
     metaTitle: "Cleaning Services in Ras Al Khaimah",
     metaDescription: "Professional cleaning in Ras Al Khaimah. Villas, apartments, and offices across the emirate.",
+    intro: "Ras Al Khaimah's property mix is one of the most varied in the UAE — beachfront resorts and apartments on Al Marjan Island, family villas in RAK City, and quieter homes around Khuzam. Al Haya's teams are equipped to handle all of it, from sea-facing glass to mountain-view terraces.",
+    sections: [
+      {
+        heading: "From Al Marjan Island to RAK City",
+        body: "Al Marjan Island properties often deal with sea-air residue on glass and outdoor furniture, while RAK City and Khuzam villas need the full deep-clean treatment for kitchens, bathrooms, and living spaces. We adjust our checklist to match what each property actually needs.",
+      },
+      {
+        heading: "A Growing Emirate, Consistently Served",
+        body: "RAK's tourism and residential growth means more villas, holiday homes, and apartments need reliable cleaning partners. Al Haya schedules regular visits across the emirate so property owners and residents get consistent, trained service without needing a local-only provider.",
+      },
+    ],
+    faqs: [
+      { question: "Do you clean holiday homes on Al Marjan Island?", answer: "Yes, including turnover cleaning between guest stays and standard residential cleaning for owners and long-term tenants." },
+      { question: "Which areas of RAK do you cover?", answer: "Al Marjan Island, RAK City, Khuzam, and surrounding communities. Call or WhatsApp +971 56 312 9254 to confirm your area." },
+      { question: "Can you handle villas with gardens and outdoor terraces in RAK?", answer: "Absolutely — our villa cleaning covers indoor rooms plus balconies, terraces, and outdoor living areas, tailored to your property's layout." },
+      { question: "Do you offer office cleaning in Ras Al Khaimah?", answer: "Yes, we provide commercial and office cleaning across RAK in addition to residential services." },
+    ],
     cities: [
       {
         name: "Al Hamra", slug: "al-hamra", emirateSlug: "ras-al-khaimah", image: "/images/areas/ras-al-khaimah/al-hamra2.webp",
@@ -755,6 +857,23 @@ export const emirates: Emirate[] = [
     heroImage: "/images/heroes/fujairah-hero.webp",
     metaTitle: "Cleaning Services in Fujairah",
     metaDescription: "Professional cleaning services in Fujairah. Homes and offices on the UAE's east coast.",
+    intro: "Fujairah is the only UAE emirate on the Gulf of Oman coast, and its communities — Fujairah City, Dibba Al Fujairah, and Kalba — span mountain-backed residential streets and coastal properties. Al Haya extends its standard UAE-wide service to the east coast, so residents don't have to settle for a smaller local provider.",
+    sections: [
+      {
+        heading: "East Coast, Same Standard",
+        body: "From Fujairah City apartments to villas in Dibba and Kalba, our teams bring the same eco-friendly products, trained staff, and thorough process used across Dubai and Abu Dhabi — just a longer drive to get there.",
+      },
+      {
+        heading: "Residential and Commercial Coverage",
+        body: "Whether it's a family home, a rental property between tenants, or a small business office, Al Haya's Fujairah service covers deep cleaning, move-in/move-out, and regular maintenance cleaning on the same booking terms as the rest of the UAE.",
+      },
+    ],
+    faqs: [
+      { question: "Do you actually travel to Fujairah for cleaning jobs?", answer: "Yes, we serve Fujairah City, Dibba Al Fujairah, Kalba, and surrounding areas directly. Call or WhatsApp +971 56 312 9254 to book." },
+      { question: "How much advance notice do you need for Fujairah?", answer: "A day or two ahead is best given the distance from our other coverage areas, but we'll do our best to accommodate shorter notice too." },
+      { question: "What services are available in Fujairah?", answer: "Villa, apartment, deep cleaning, move-in/move-out, office cleaning, and more — the same full range offered across the UAE." },
+      { question: "Is pricing different for Fujairah compared to Dubai?", answer: "Pricing is based on property size and service type, not emirate. Contact us for a free, tailored quote for your Fujairah property." },
+    ],
     cities: [
       {
         name: "Fujairah City", slug: "fujairah-city", emirateSlug: "fujairah", image: "/images/areas/fujairah/fujaira-city2.webp",

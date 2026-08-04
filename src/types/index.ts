@@ -22,6 +22,10 @@ export interface Emirate {
   heroImage: string;
   metaTitle: string;
   metaDescription: string;
+  // ── Optional unique emirate-level SEO content ───────────────────────
+  intro?: string;                                // expanded unique intro paragraph
+  sections?: { heading: string; body: string }[]; // unique emirate content blocks
+  faqs?: FAQItem[];                              // emirate-level FAQs (visible + FAQPage schema)
 }
 
 export interface FAQItem {
