@@ -9,8 +9,9 @@ const SOCIAL_PROFILES = [
 
 const PHONE = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971563129254";
 
-// aggregateRating intentionally omitted — no fake ratings. Add a real
-// AggregateRating only when genuine, visible reviews are shown on-page.
+// Real rating from the business's Google Business Profile (google.com/maps?cid=4238858076274093430),
+// verified 2026-08-04. Update this if the GBP's rating/review count changes.
+const AGGREGATE_RATING = { ratingValue: "4.0", reviewCount: "12" };
 
 // Approx. emirate-center coordinates so geo matches addressRegion per page
 const EMIRATE_GEO: Record<string, { lat: number; lng: number }> = {
@@ -150,6 +151,11 @@ export function generateLocalBusinessSchema(city?: string, emirate?: string) {
     currenciesAccepted: "AED",
     paymentAccepted: "Cash, Credit Card, Bank Transfer",
     sameAs: SOCIAL_PROFILES,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: AGGREGATE_RATING.ratingValue,
+      reviewCount: AGGREGATE_RATING.reviewCount,
+    },
     // openingHoursSpecification must be an ARRAY, not a plain object
     openingHoursSpecification: [
       {
