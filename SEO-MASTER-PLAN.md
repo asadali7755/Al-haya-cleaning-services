@@ -16,7 +16,7 @@
 | 1 | Critical Fixes | Stop the bleeding (leads + indexing) | `[x]` ✅ verified live |
 | 2 | Technical SEO | Site health hardening | `[x]` done ✅ (CWV 92/100) |
 | 3 | On-Page & Content | Unique content, FAQs, internal links | `[x]` done ✅ (30 cities + 11 services + 7 emirates live) |
-| 4 | Local SEO | GBP, NAP, reviews, map pack | `[~]` GBP name-fix pending (client) ⏳ |
+| 4 | Local SEO | GBP, NAP, reviews, map pack | `[~]` GBP confirmed + map + rating live ✅, optimization ongoing |
 | 5 | Content / Topical Authority | Blog cluster, guides | `[x]` blog + 10 articles live ✅ |
 | 6 | AEO / GEO | AI search visibility & entity | `[~]` llms.txt + entity live ✅ |
 | 7 | Authority / Backlinks | Local links, citations, PR | `[ ]` not started — action sheet ready, client to execute |
@@ -60,7 +60,7 @@
 
 - [x] 🧑‍💻 **Heading fix:** emirate & city pages — `{description}` moved from `<h2>` to `<p>` ✅ *(repo, typecheck passed)*
 - [x] 🧑‍💻 **Geo accuracy:** per-emirate coordinates added (`EMIRATE_GEO` map in `lib/schema.ts`) ✅ *(repo, typecheck passed)*
-- [~] 🧑‍💻 **aggregateRating:** ⏸️ **DEFERRED by client decision** — keep `4.9/500` for now; replace with REAL rating once the **new GBP** is set up (see Phase 4). ⚠️ *Known risk: current rating is inflated vs real 3.4/20 — fix as soon as new GBP is live.*
+- [x] 🧑‍💻 **aggregateRating:** ✅ Real rating (4.0★ / 12 reviews) added, matching the confirmed GBP ✅ *(2026-08-04, commit 66f3635 — see Phase 4)*
 - [x] ☁️ **Core Web Vitals:** ✅ EXCELLENT — official PageSpeed Insights: Performance **92** (mobile + desktop), SEO **100**, Best Practices **100**, Accessibility **96**, CLS 0. No optimization needed. *(An earlier Apify-lab reading of 64 was server-contention noise — confirmed false on pagespeed.web.dev.)*
 - [x] 🧑‍💻 **Internal linking audit:** related-services block (service pages) + new "Nearby Areas" block (city pages) confirmed/added ✅ *(2026-08-04, commit fe6e581)*
 - [x] 🧑‍💻 **Image alt audit:** no empty `alt=""` found across `src` ✅ *(verified 2026-08-04)*
@@ -90,11 +90,12 @@
 
 > 🔎 **Audit findings to act on here (updated 2026-08-04):**
 > - ✅ **Official phone = `+971 56 312 9254`** (website number). All NAP must use this.
-> - ✅ **Clarified 2026-08-04:** the GBP embedded on the site IS villadeepcleaning's own dedicated listing — it was created specifically for this business. The only problem is its **Google Business Profile display name is wrong** (currently set to "Servedubai" instead of a matching brand name). This is unrelated to servedubai.com's own separate, correctly-named GBP ("Madinat Al Haya").
-> - 🎯 **Client action needed:** rename this GBP's business name in Google Business Profile Manager (business.google.com) from "Servedubai" to the correct brand (e.g. "Al Haya Cleaning Services" or "Villa Deep Cleaning Dubai"), then let Google review/verify the name change.
+> - ✅ **Confirmed 2026-08-04 via live Google Maps lookup** (`google.com/maps?cid=4238858076274093430`): this GBP's **website field = villadeepcleaning.com** and **phone = +971 56 312 9254** — genuinely this business's listing. Display name is "Servedubai", category is "Corporate office" (both could be tidied up later but are not blocking). **Real rating: 4.0★ / 12 reviews.**
+> - 🎯 **Client decision (2026-08-04):** keep using this GBP as-is rather than creating a new one or renaming it for now. Map embed restored + real rating (4.0/12) added to schema.
 
-- [~] 🔑 **Fix the existing GBP's display name** (it's already villadeepcleaning's own listing — just needs renaming from "Servedubai" to the correct brand) — client to do in Google Business Profile Manager
-- [x] 🧑‍💻 **Removed the map embed** from homepage + contact page (2026-08-04, commit e94f01a) — was showing the wrong "Servedubai" name to visitors; will be re-added once the GBP name is corrected
+- [x] 🔑 **Use the existing GBP as-is** ✅ *(client decision 2026-08-04 — website/phone already match, no rename/new-GBP needed for now)*
+- [x] 🧑‍💻 **Map embed live** on homepage + contact page ✅ *(commit 66f3635)*
+- [x] 🧑‍💻 **Real `aggregateRating` added** to LocalBusiness schema — 4.0★ / 12 reviews, matches live GBP ✅ *(commit 66f3635)*
 - [x] 🧑‍💻 **Removed placeholder `4.9/500`** from schema ✅ — real GBP rating is 3.9/11; rating kept OFF for now (client decision), add a real one when reviews improve
 - [ ] 🔑 **Optimize Google Business Profile:** correct categories, all services, service areas, hours, 20+ photos
 - [ ] 🔑 Add GBP **posts, products/services, and Q&A**
