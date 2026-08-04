@@ -25,15 +25,6 @@ export const metadata: Metadata = {
   },
   description:
     "Top-rated villa & apartment cleaning in Dubai & all UAE Emirates. Eco-friendly products, trained staff. Trusted by 5000+ families. Call +971 56 312 9254.",
-  keywords: [
-    "villa cleaning Dubai", "apartment cleaning Dubai", "deep cleaning Dubai",
-    "cleaning services Dubai", "villa cleaning UAE", "office cleaning Dubai",
-    "maid service Dubai", "home cleaning Dubai", "cleaning company Dubai",
-    "move out cleaning Dubai", "sofa cleaning Dubai", "carpet cleaning Dubai",
-    "window cleaning Dubai", "post construction cleaning Dubai",
-    "cleaning services Abu Dhabi", "cleaning services Sharjah",
-    "professional cleaning UAE", "best cleaning company Dubai",
-  ],
   metadataBase: new URL(process.env.SITE_URL || "http://localhost:3000"),
   openGraph: {
     type: "website",
