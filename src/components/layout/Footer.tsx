@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Phone, Mail, MessageCircle, MapPin } from "lucide-react";
+import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -143,14 +144,13 @@ export function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <MessageCircle className="w-5 h-5 text-gold flex-shrink-0" />
-              <a
+              <WhatsAppLink
                 href={`https://wa.me/${(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971563129254").replace(/[^0-9]/g, "")}`}
-                target="_blank"
-                rel="noopener noreferrer"
+                source="footer"
                 className="text-lg text-gray-300 hover:text-gold transition-colors"
               >
                 WhatsApp Us
-              </a>
+              </WhatsAppLink>
             </li>
             <li className="flex items-center gap-3">
               <MapPin className="w-5 h-5 text-gold flex-shrink-0" />

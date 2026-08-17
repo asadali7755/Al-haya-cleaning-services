@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/Button";
+import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 import { TrustBadges } from "@/components/ui/TrustBadges";
 import { Phone } from "lucide-react";
 
@@ -20,10 +21,10 @@ export function CTASection() {
           <Button href="/contact" size="lg">
             Request a Free Quote
           </Button>
-          <Button href={whatsappUrl} variant="secondary" size="lg">
+          <WhatsAppLink href={whatsappUrl} source="homepage_cta" variant="secondary" size="lg">
             <Phone className="w-5 h-5 mr-2" />
             WhatsApp Us
-          </Button>
+          </WhatsAppLink>
         </div>
         <TrustBadges className="mt-10" />
       </div>

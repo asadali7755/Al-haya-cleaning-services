@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { generateLocalBusinessSchema } from "@/lib/schema";
 import { Mail, Phone, MapPin } from "lucide-react";
@@ -83,14 +84,13 @@ export default function ContactPage() {
               <p className="text-sm mb-4" style={{ color: "var(--text-secondary)" }}>
                 Chat with us directly for a quick response.
               </p>
-              <a
+              <WhatsAppLink
                 href={`https://wa.me/${(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971563129254").replace(/[^0-9]/g, "")}`}
-                target="_blank"
-                rel="noopener noreferrer"
+                source="contact_page"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#25D366] text-white font-medium hover:bg-[#20bd5a] transition-colors"
               >
                 Chat on WhatsApp
-              </a>
+              </WhatsAppLink>
             </div>
           </div>
         </div>

@@ -8,18 +8,21 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
 
-const variants = {
+export const buttonVariants = {
   primary: "bg-gold text-black hover:bg-gold-dark focus-visible:ring-gold",
   secondary: "bg-[var(--bg-surface)] text-[var(--text-primary)] border border-[var(--border-color)] hover:bg-gold/10 focus-visible:ring-gold",
   outline: "border-2 border-gold text-gold hover:bg-gold/10 focus-visible:ring-gold",
   ghost: "text-[var(--text-primary)] hover:bg-gold/10 focus-visible:ring-gold",
 };
 
-const sizes = {
+export const buttonSizes = {
   sm: "px-4 py-2 text-sm",
   md: "px-6 py-2.5 text-base",
   lg: "px-8 py-3 text-lg",
 };
+
+const variants = buttonVariants;
+const sizes = buttonSizes;
 
 export function Button({
   variant = "primary",

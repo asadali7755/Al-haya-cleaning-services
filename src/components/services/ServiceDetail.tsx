@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Service } from "@/types";
 import { Button } from "@/components/ui/Button";
+import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TrustBadges } from "@/components/ui/TrustBadges";
 import { Check, ChevronRight, MapPin, Shield, Clock, Award, Sparkles, Users, Leaf, ThumbsUp, Star, ArrowRight } from "lucide-react";
@@ -344,13 +345,14 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
               <Button href="/contact" size="lg">
                 Get a Free Quote
               </Button>
-              <Button
+              <WhatsAppLink
                 href={`https://wa.me/${(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971563129254").replace(/[^0-9]/g, "")}?text=${encodeURIComponent(`Hi! I'm interested in your ${service.name} service.`)}`}
+                source={`service_${service.slug}`}
                 variant="secondary"
                 size="lg"
               >
                 WhatsApp Us
-              </Button>
+              </WhatsAppLink>
             </div>
             <TrustBadges className="mt-8" />
           </div>
