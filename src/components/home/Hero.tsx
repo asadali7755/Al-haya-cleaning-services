@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
+import { QuoteCard } from "@/components/ui/QuoteCard";
+import { RequestCallButton } from "@/components/ui/RequestCallButton";
 
 export function Hero() {
   return (
@@ -26,14 +28,23 @@ export function Hero() {
         <h2 className="font-display text-xl md:text-2xl lg:text-3xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed font-normal">
           Trusted Villa, Apartment & Deep Cleaning Company Across Dubai, Abu Dhabi, Sharjah & All 7 Emirates
         </h2>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
           <Button href="/contact" size="lg">
             Get a Free Quote
           </Button>
+          <RequestCallButton source="Hero" size="lg" />
           <Button href="#services" variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
             Our Services
           </Button>
         </div>
+
+        {/* Capture the visitor here — the hero is where most of them land and
+            most of them leave. */}
+        <QuoteCard
+          source="Hero"
+          heading="Get your free quote"
+          className="mt-10 max-w-md mx-auto text-left"
+        />
       </div>
     </section>
   );

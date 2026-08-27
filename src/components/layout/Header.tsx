@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import { useRequestCall } from "@/components/ui/RequestCallModal";
 import { Menu, X, Phone } from "lucide-react";
 
 const navLinks = [
@@ -110,6 +111,7 @@ function AlHayaLogo({ className }: { className?: string }) {
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { open: openCallModal } = useRequestCall();
 
   return (
     <header
@@ -166,6 +168,15 @@ export function Header() {
             <Phone className="w-4 h-4" />
             +971 56 312 9254
           </a>
+
+          <button
+            onClick={() => openCallModal("Header")}
+            className="flex items-center gap-2 px-4 py-2 rounded-full font-semibold text-sm whitespace-nowrap border transition-all hover:scale-105 cursor-pointer"
+            style={{ borderColor: "var(--color-gold)", color: "var(--color-gold)" }}
+          >
+            <Phone className="w-4 h-4" />
+            Request a Call
+          </button>
 
           <ThemeToggle />
         </nav>
@@ -237,6 +248,15 @@ export function Header() {
             <Phone className="w-4 h-4" />
             +971 56 312 9254
           </a>
+
+          <button
+            onClick={() => { setMobileOpen(false); openCallModal("Header (mobile)"); }}
+            className="flex items-center gap-2 px-4 py-3 rounded-full font-semibold justify-center whitespace-nowrap border cursor-pointer"
+            style={{ borderColor: "var(--color-gold)", color: "var(--color-gold)" }}
+          >
+            <Phone className="w-4 h-4" />
+            Request a Call
+          </button>
         </div>
       )}
     </header>

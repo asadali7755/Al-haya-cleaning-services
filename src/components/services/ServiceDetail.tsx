@@ -11,6 +11,7 @@ import { emirates } from "@/data/locations";
 import { services } from "@/data/services";
 import { serviceGalleries } from "@/data/service-galleries";
 import { ServiceGallery } from "@/components/services/ServiceGallery";
+import { RequestCallButton } from "@/components/ui/RequestCallButton";
 
 interface ServiceDetailProps {
   service: Service;
@@ -343,6 +344,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
               Contact us today for a free, no-obligation quote.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <RequestCallButton source={`Service page — ${service.name}`} size="lg" />
               <Button href="/contact" size="lg">
                 Get a Free Quote
               </Button>

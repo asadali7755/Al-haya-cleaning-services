@@ -5,6 +5,7 @@ import { BlogArticle } from "@/components/blog/BlogArticle";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchemaFromList } from "@/lib/schema";
 import { QuoteCard } from "@/components/ui/QuoteCard";
+import { RequestCallButton } from "@/components/ui/RequestCallButton";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -55,6 +56,9 @@ export default async function BlogPostPage({ params }: PageProps) {
       )}
       <BlogArticle post={post} />
       <section className="py-16 px-4">
+        <div className="flex justify-center mb-8">
+          <RequestCallButton source={`Blog post — ${post.title}`} size="lg" />
+        </div>
         <QuoteCard
           source={`Blog post — ${post.title}`}
           heading="Need this done properly? Get a free quote"

@@ -3,6 +3,7 @@ import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 import { TrustBadges } from "@/components/ui/TrustBadges";
 import { QuoteCard } from "@/components/ui/QuoteCard";
 import { Phone } from "lucide-react";
+import { RequestCallButton } from "@/components/ui/RequestCallButton";
 
 export function CTASection({ source = "Homepage CTA" }: { source?: string } = {}) {
   const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971563129254";
@@ -22,6 +23,7 @@ export function CTASection({ source = "Homepage CTA" }: { source?: string } = {}
           <Button href="/contact" size="lg">
             Request a Free Quote
           </Button>
+          <RequestCallButton source={source} size="lg" />
           <WhatsAppLink href={whatsappUrl} source="homepage_cta" variant="secondary" size="lg">
             <Phone className="w-5 h-5 mr-2" />
             WhatsApp Us

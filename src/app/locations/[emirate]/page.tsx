@@ -11,6 +11,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { ChevronRight } from "lucide-react";
 import { QuoteCard } from "@/components/ui/QuoteCard";
+import { RequestCallButton } from "@/components/ui/RequestCallButton";
 
 interface PageProps {
   params: Promise<{ emirate: string }>;
@@ -211,6 +212,7 @@ export default async function EmiratePage({ params }: PageProps) {
             Get a free quote for professional cleaning services in your area.
           </p>
           <Button href="/contact" size="lg">Get a Free Quote</Button>
+          <RequestCallButton source={`${emirate.name} location page`} size="lg" className="ml-3" />
           <QuoteCard
             source={`${emirate.name} location page`}
             heading={`Free quote in ${emirate.name}`}

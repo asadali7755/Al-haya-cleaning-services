@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { generateBreadcrumbSchema } from "@/lib/schema";
 import { Calendar, Clock, Tag, ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
 import { QuoteCard } from "@/components/ui/QuoteCard";
+import { RequestCallButton } from "@/components/ui/RequestCallButton";
 
 const siteUrl = process.env.SITE_URL || "http://localhost:3000";
 
@@ -127,6 +128,9 @@ export default function BlogIndexPage() {
       )}
 
       <section className="py-16 px-4">
+        <div className="flex justify-center mb-8">
+          <RequestCallButton source="Blog index" size="lg" />
+        </div>
         <QuoteCard
           source="Blog index"
           heading="Get a free cleaning quote"
