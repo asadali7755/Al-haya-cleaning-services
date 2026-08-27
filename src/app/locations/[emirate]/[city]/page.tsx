@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { emirates, getEmirateBySlug, getCityBySlug } from "@/data/locations";
 import { services } from "@/data/services";
+import { hasCombo } from "@/data/serviceAreaCombos";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { generateLocalBusinessSchema, generateBreadcrumbSchema, generateFAQSchemaFromList } from "@/lib/schema";
 import { buildTitle } from "@/lib/metadata";
@@ -155,7 +156,17 @@ export default async function CityPage({ params }: PageProps) {
           <SectionHeading title="Available Services" subtitle={`Professional cleaning in ${city.name}, ${emirate.name}`} />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {services.map((service) => (
-              <Link key={service.slug} href={`/services/${service.slug}`}>
+              // Prefer the area-specific page where one exists, so the combo
+              // pages are linked rather than orphaned and the visitor lands on
+              // the closer match.
+              <Link
+                key={service.slug}
+                href={
+                  hasCombo(emirate.slug, city.slug, service.slug)
+                    ? `/locations/${emirate.slug}/${city.slug}/${service.slug}`
+                    : `/services/${service.slug}`
+                }
+              >
                 <div className="group relative overflow-hidden rounded-xl min-h-[240px] cursor-pointer">
                   <Image
                     src={service.image}
