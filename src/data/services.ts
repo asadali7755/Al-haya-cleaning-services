@@ -287,6 +287,32 @@ export const services: Service[] = [
       { question: "How long until the interior is dry and usable?", answer: "Our high-suction fabric extraction means fast drying, so your car is ready to use shortly after the detail is complete." },
     ],
   },
+  {
+    name: "Floor Care & Polishing",
+    slug: "floor-care",
+    shortDescription: "Marble, tile, grout & hard-floor deep cleaning, scrubbing and polishing across Dubai.",
+    description:
+      "Dubai's floors take a beating that most homes elsewhere never see. Fine desert dust works its way into grout lines and grinds against polished stone like sandpaper, hard water leaves mineral film on tiles, and villa entrances collect sand every single day. Regular mopping spreads that grit around rather than lifting it, which is why floors here dull and discolour far faster than owners expect.\n\nAl Haya's floor care service treats the floor as its own job rather than a step inside a general clean. We machine-scrub tile and grout to pull out embedded dirt, restore marble and natural stone with diamond polishing pads, strip and reseal where the surface has lost its protective layer, and finish with a sealer that slows down how quickly the grime comes back.\n\nWe work on marble, porcelain, ceramic, terrazzo, vinyl and natural stone, in villas, apartments and commercial floors. Whether it is a Palm Jumeirah villa with wall-to-wall marble or an office that needs its tiles brought back before a handover, we assess the surface first and use the method that suits it, not one machine for everything.",
+    benefits: [
+      "Marble & natural stone polishing with diamond pads",
+      "Deep tile & grout machine scrubbing, not surface mopping",
+      "Stripping, resealing & protective sealer application",
+      "Villa, apartment & commercial floors across all 7 Emirates",
+      "Surface assessed first so marble, porcelain and vinyl each get the right method",
+    ],
+    image: "/images/services/deep-cleaning.webp",
+    icon: "sparkles",
+    keywords: ["floor care Dubai", "floorcare Dubai", "floor cleaning services Dubai", "marble polishing Dubai", "tile and grout cleaning Dubai", "floor polishing Dubai", "floorcare Palm Jumeirah"],
+    metaTitle: "Floor Care Dubai | Marble Polishing, Tile & Grout Cleaning UAE",
+    metaDescription: "Professional floor care in Dubai: marble polishing, tile & grout scrubbing, sealing and restoration for villas and offices. Free quote: +971 56 312 9254.",
+    relatedServices: ["deep-cleaning", "villa-cleaning", "post-construction-cleaning"],
+    faqs: [
+      { question: "Do you polish marble floors or only clean them?", answer: "Both. Cleaning lifts dirt from the surface; polishing uses diamond abrasive pads to remove fine scratches and restore the shine that foot traffic and desert sand wear away. We assess the floor and recommend which it actually needs." },
+      { question: "Can you clean grout that has gone dark?", answer: "Yes. Grout is porous, so it traps dirt that mopping cannot reach. We machine-scrub with a grout-specific solution and can reseal afterwards so it stays clean longer." },
+      { question: "How often do floors in Dubai need professional care?", answer: "Most villas benefit from a deep floor treatment every 6-12 months. Homes near the beach or with heavy foot traffic, Palm Jumeirah and Jumeirah villas especially, often need it sooner because of the sand carried indoors." },
+      { question: "Which floor types do you work on?", answer: "Marble, porcelain, ceramic, terrazzo, natural stone and vinyl. Each needs a different pad, chemical and machine speed, so we check the surface before starting rather than using one method throughout." },
+    ],
+  },
 ];
 
 export function getServiceBySlug(slug: string): Service | undefined {
