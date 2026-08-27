@@ -66,7 +66,15 @@ export async function POST(request: Request) {
     const serviceLabel =
       services.find((s) => s.slug === service)?.name ?? service;
 
-    const contactEmail = process.env.CONTACT_EMAIL || "Alhayacleaners@gmail.com";
+    // Same inbox and sender the other Al Haya sites report into, so leads from
+    // all of them land together. onboarding@resend.dev is Resend's shared
+    // sender — it needs no domain verification, which is why the sibling sites
+    // use it. The site is named in the subject and twice in the body so a lead
+    // is never ambiguous about which website produced it.
+    const contactEmail = process.env.CONTACT_EMAIL || "marbleprodxb@gmail.com";
+    const fromAddress =
+      process.env.EMAIL_FROM || "Villa Deep Cleaning Website <onboarding@resend.dev>";
+    const timestamp = new Date().toLocaleString("en-AE", { timeZone: "Asia/Dubai" });
     const apiKey = process.env.RESEND_API_KEY;
     const source = typeof body.source === "string" ? body.source : "Contact page";
 
@@ -89,23 +97,43 @@ export async function POST(request: Request) {
       );
     }
 
+    const row = (label: string, value: string, strong = false) => `
+      <tr>
+        <td style="padding:12px 0;border-bottom:1px solid #e8e0d0;color:#666;width:120px;font-size:14px;">${label}</td>
+        <td style="padding:12px 0;border-bottom:1px solid #e8e0d0;font-size:14px;${strong ? "font-weight:700;color:#c9a84c;" : "font-weight:600;color:#1a1208;"}">${value}</td>
+      </tr>`;
+
     const resend = new Resend(apiKey);
     const { error } = await resend.emails.send({
-      from: process.env.EMAIL_FROM || "Al Haya Website <noreply@alhaya.ae>",
+      from: fromAddress,
       to: contactEmail,
       replyTo: email,
-      subject: `New enquiry: ${name} — ${serviceLabel}`,
+      subject: `New Lead — ${serviceLabel} | VillaDeepCleaning.com`,
       html: `
-        <h2>New enquiry from the website</h2>
-        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-        <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
-        <p><strong>Service:</strong> ${escapeHtml(serviceLabel)}</p>
-        <p><strong>Came from:</strong> ${escapeHtml(source)}</p>
-        <p><strong>Message:</strong></p>
-        <p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>
-        <hr />
-        <p><em>Sent from villadeepcleaning.com</em></p>
+        <div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:32px;background:#f9f6f1;border-radius:12px;">
+          <div style="text-align:center;margin-bottom:24px;">
+            <h2 style="margin:0 0 4px;font-size:22px;color:#1a1208;">New Client Request</h2>
+            <p style="margin:0;font-size:14px;color:#c9a84c;font-weight:600;">from villadeepcleaning.com</p>
+          </div>
+          <table style="width:100%;border-collapse:collapse;">
+            ${row("Source", "villadeepcleaning.com", true)}
+            ${row("Page", escapeHtml(source))}
+            ${row("Name", escapeHtml(name))}
+            ${row("Service", escapeHtml(serviceLabel))}
+            ${row("Phone", `<a href="tel:${escapeHtml(phone)}" style="color:#1a1208;text-decoration:none;">${escapeHtml(phone)}</a>`)}
+            ${row("Email", escapeHtml(email))}
+            ${row("Message", escapeHtml(message).replace(/\n/g, "<br />"))}
+            ${row("Time (Dubai)", escapeHtml(timestamp))}
+          </table>
+          <div style="margin-top:24px;padding:16px;background:#1a1208;border-radius:8px;text-align:center;">
+            <a href="https://wa.me/${phone.replace(/[^0-9]/g, "")}" style="color:#c9a84c;font-weight:600;text-decoration:none;font-size:14px;">Reply on WhatsApp</a>
+            <span style="color:#555;margin:0 8px;">|</span>
+            <a href="tel:${escapeHtml(phone)}" style="color:#c9a84c;font-weight:600;text-decoration:none;font-size:14px;">Call Back</a>
+          </div>
+          <p style="margin:20px 0 0;font-size:11px;color:#999;text-align:center;">
+            This lead was submitted via villadeepcleaning.com (Al Haya Cleaning Services)
+          </p>
+        </div>
       `,
     });
 
