@@ -5,6 +5,7 @@ import { blogPosts } from "@/data/blog";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { generateBreadcrumbSchema } from "@/lib/schema";
 import { Calendar, Clock, Tag, ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
+import { QuoteCard } from "@/components/ui/QuoteCard";
 
 const siteUrl = process.env.SITE_URL || "http://localhost:3000";
 
@@ -124,6 +125,14 @@ export default function BlogIndexPage() {
           </div>
         </section>
       )}
+
+      <section className="py-16 px-4">
+        <QuoteCard
+          source="Blog index"
+          heading="Get a free cleaning quote"
+          className="max-w-md mx-auto"
+        />
+      </section>
     </>
   );
 }

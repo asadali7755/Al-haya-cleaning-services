@@ -67,18 +67,30 @@ export function ContactForm() {
     setErrors({});
     setStatus("submitting");
 
+    const serviceName = services.find(s => s.slug === formData.service)?.name || formData.service;
+
     try {
-      const whatsappNum = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971563129254";
-      const serviceName = services.find(s => s.slug === formData.service)?.name || formData.service;
-      const text = `New Cleaning Inquiry
+      // Send server-side first. Opening WhatsApp is not delivery — the visitor
+      // still has to press send there, so on its own it loses enquiries.
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          // The API validates this as a slug and resolves the label itself.
+          service: formData.service,
+          message: formData.message,
+          source: "Contact page form",
+        }),
+      });
 
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Service: ${serviceName}
+      if (!res.ok) {
+        setStatus("error");
+        return;
+      }
 
-Message: ${formData.message}`;
-      const waUrl = `https://wa.me/${whatsappNum.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(text)}`;
       // GA4/GTM conversion event for a submitted enquiry
       if (typeof window !== "undefined") {
         window.dataLayer = window.dataLayer || [];
@@ -88,7 +100,7 @@ Message: ${formData.message}`;
           page_path: window.location.pathname,
         });
       }
-      window.open(waUrl, "_blank");
+
       setStatus("success");
       setFormData({ name: "", email: "", phone: "", service: "", message: "" });
     } catch {
@@ -119,13 +131,19 @@ Message: ${formData.message}`;
         <div className="flex items-start gap-3 p-4 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800">
           <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
           <div>
-            <p className="text-red-700 dark:text-red-400 font-medium">Something went wrong.</p>
+            <p className="text-red-700 dark:text-red-400 font-medium">
+              We couldn&apos;t send your message.
+            </p>
             <p className="text-red-600 dark:text-red-400 text-sm">
-              Please try again or{" "}
+              Please try again, or reach us directly on{" "}
               <a href={whatsappUrl} className="underline font-medium" target="_blank" rel="noopener noreferrer">
-                contact us via WhatsApp
+                WhatsApp
+              </a>{" "}
+              or{" "}
+              <a href={`tel:${whatsappNumber}`} className="underline font-medium">
+                {whatsappNumber}
               </a>
-              .
+              {" "}— we&apos;ll answer straight away.
             </p>
           </div>
         </div>

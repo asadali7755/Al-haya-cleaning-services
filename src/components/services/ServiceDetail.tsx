@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TrustBadges } from "@/components/ui/TrustBadges";
+import { QuoteCard } from "@/components/ui/QuoteCard";
 import { Check, ChevronRight, MapPin, Shield, Clock, Award, Sparkles, Users, Leaf, ThumbsUp, Star, ArrowRight } from "lucide-react";
 import { emirates } from "@/data/locations";
 import { services } from "@/data/services";
@@ -354,6 +355,12 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
                 WhatsApp Us
               </WhatsAppLink>
             </div>
+            <QuoteCard
+              defaultService={service.slug}
+              source={`Service page — ${service.name}`}
+              heading={`Free quote for ${service.name}`}
+              className="mt-8 max-w-md mx-auto text-left"
+            />
             <TrustBadges className="mt-8" />
           </div>
         </div>

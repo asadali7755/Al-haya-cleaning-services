@@ -10,6 +10,7 @@ import { buildTitle } from "@/lib/metadata";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { ChevronRight, MapPin } from "lucide-react";
+import { QuoteCard } from "@/components/ui/QuoteCard";
 
 interface PageProps {
   params: Promise<{ emirate: string; city: string }>;
@@ -246,6 +247,11 @@ export default async function CityPage({ params }: PageProps) {
             Professional cleaning services at your doorstep. Get a free quote today.
           </p>
           <Button href="/contact" size="lg">Get a Free Quote</Button>
+          <QuoteCard
+            source={`${city.name}, ${emirate.name} area page`}
+            heading={`Free quote in ${city.name}`}
+            className="mt-8 max-w-md mx-auto text-left"
+          />
         </div>
       </section>
     </>

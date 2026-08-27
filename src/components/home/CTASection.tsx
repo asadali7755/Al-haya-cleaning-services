@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/Button";
 import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 import { TrustBadges } from "@/components/ui/TrustBadges";
+import { QuoteCard } from "@/components/ui/QuoteCard";
 import { Phone } from "lucide-react";
 
-export function CTASection() {
+export function CTASection({ source = "Homepage CTA" }: { source?: string } = {}) {
   const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971563129254";
   const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hello! I'm interested in Al Haya Cleaning Services.")}`;
 
@@ -26,6 +27,15 @@ export function CTASection() {
             WhatsApp Us
           </WhatsAppLink>
         </div>
+
+        {/* Capture the enquiry here rather than sending people off to
+            /contact or WhatsApp, where most of them never arrive. */}
+        <QuoteCard
+          source={source}
+          heading="Tell us what you need"
+          className="mt-10 max-w-md mx-auto text-left"
+        />
+
         <TrustBadges className="mt-10" />
       </div>
     </section>

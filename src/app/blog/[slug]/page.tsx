@@ -4,6 +4,7 @@ import { blogPosts, getBlogPostBySlug } from "@/data/blog";
 import { BlogArticle } from "@/components/blog/BlogArticle";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchemaFromList } from "@/lib/schema";
+import { QuoteCard } from "@/components/ui/QuoteCard";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -53,6 +54,13 @@ export default async function BlogPostPage({ params }: PageProps) {
         <JsonLd data={generateFAQSchemaFromList(post.faqs)} />
       )}
       <BlogArticle post={post} />
+      <section className="py-16 px-4">
+        <QuoteCard
+          source={`Blog post — ${post.title}`}
+          heading="Need this done properly? Get a free quote"
+          className="max-w-md mx-auto"
+        />
+      </section>
     </>
   );
 }

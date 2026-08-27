@@ -1,8 +1,20 @@
 import { NextResponse } from "next/server";
 import { validateContactForm } from "@/lib/validators";
+import { services } from "@/data/services";
 import { Resend } from "resend";
 
 const rateLimit = new Map<string, { count: number; resetAt: number }>();
+
+/** Form values are interpolated into the notification email — escape them so a
+ *  submitted "<" cannot break or inject markup into the message we read. */
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
 
 function checkRateLimit(ip: string): boolean {
   const now = Date.now();
@@ -50,36 +62,69 @@ export async function POST(request: Request) {
 
     const { name, email, phone, service, message } = body;
 
+    // `service` is validated as a slug; show the readable name in the email.
+    const serviceLabel =
+      services.find((s) => s.slug === service)?.name ?? service;
+
     const contactEmail = process.env.CONTACT_EMAIL || "Alhayacleaners@gmail.com";
     const apiKey = process.env.RESEND_API_KEY;
+    const source = typeof body.source === "string" ? body.source : "Contact page";
 
-    if (apiKey) {
-      const resend = new Resend(apiKey);
-      await resend.emails.send({
-        from: process.env.EMAIL_FROM || "Al Haya Website <noreply@alhaya.ae>",
-        to: contactEmail,
-        subject: `New Contact: ${name} — ${service}`,
-        html: `
-          <h2>New Contact Form Submission</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Service:</strong> ${service}</p>
-          <p><strong>Message:</strong></p>
-          <p>${message}</p>
-          <hr />
-          <p><em>Sent from Al Haya Cleaning Services website</em></p>
-        `,
-      });
-    } else {
-      console.log("Contact form submission (no RESEND_API_KEY configured):", {
+    // No key means no email is going anywhere. Answering "thank you" to that
+    // loses the enquiry silently — the visitor believes they are in the queue
+    // and nobody is ever told. Fail instead, so the form can point them at
+    // WhatsApp or the phone number.
+    if (!apiKey) {
+      console.error(
+        "[contact] RESEND_API_KEY is not set — enquiry could not be emailed:",
+        { name, phone, service, source, timestamp: new Date().toISOString() }
+      );
+      return NextResponse.json(
+        {
+          success: false,
+          message:
+            "We couldn't send your message right now. Please WhatsApp or call us — we'll answer straight away.",
+        },
+        { status: 503 }
+      );
+    }
+
+    const resend = new Resend(apiKey);
+    const { error } = await resend.emails.send({
+      from: process.env.EMAIL_FROM || "Al Haya Website <noreply@alhaya.ae>",
+      to: contactEmail,
+      replyTo: email,
+      subject: `New enquiry: ${name} — ${serviceLabel}`,
+      html: `
+        <h2>New enquiry from the website</h2>
+        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
+        <p><strong>Service:</strong> ${escapeHtml(serviceLabel)}</p>
+        <p><strong>Came from:</strong> ${escapeHtml(source)}</p>
+        <p><strong>Message:</strong></p>
+        <p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>
+        <hr />
+        <p><em>Sent from villadeepcleaning.com</em></p>
+      `,
+    });
+
+    // Resend reports delivery problems in the body, not by throwing.
+    if (error) {
+      console.error("[contact] Resend rejected the send:", error, {
         name,
-        email,
         phone,
         service,
-        message,
-        timestamp: new Date().toISOString(),
+        source,
       });
+      return NextResponse.json(
+        {
+          success: false,
+          message:
+            "We couldn't send your message right now. Please WhatsApp or call us — we'll answer straight away.",
+        },
+        { status: 502 }
+      );
     }
 
     return NextResponse.json({

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { GalleryClient } from "@/components/gallery/GalleryClient";
 import { galleryImages, galleryCategories } from "@/data/gallery";
+import { QuoteCard } from "@/components/ui/QuoteCard";
 
 export const metadata: Metadata = {
   title: "Our Work Gallery | Al Haya Cleaning Services Dubai & UAE",
@@ -50,6 +51,13 @@ export default function GalleryPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <GalleryClient images={galleryImages} categories={galleryCategories} />
+      <section className="py-16 px-4">
+        <QuoteCard
+          source="Gallery page"
+          heading="Like what you see? Get a free quote"
+          className="max-w-md mx-auto"
+        />
+      </section>
     </>
   );
 }

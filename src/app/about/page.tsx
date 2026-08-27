@@ -282,7 +282,7 @@ export default function AboutPage() {
       </section>
 
       <Testimonials />
-      <CTASection />
+      <CTASection source="About page" />
     </>
   );
 }
