@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { services } from "@/data/services";
 import { emirates } from "@/data/locations";
 import { blogPosts } from "@/data/blog";
+import { SERVICE_AREA_COMBOS } from "@/data/serviceAreaCombos";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = process.env.SITE_URL || "http://localhost:3000";
@@ -47,5 +48,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  return [...staticPages, ...servicePages, ...locationPages, ...blogPages];
+  // Service-by-area pages. They are only reachable through the city pages, so
+  // without this Google has to crawl its way in rather than being told.
+  const comboPages: MetadataRoute.Sitemap = SERVICE_AREA_COMBOS.map((c) => ({
+    url: `${siteUrl}/locations/${c.emirate}/${c.city}/${c.service}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...servicePages, ...locationPages, ...comboPages, ...blogPages];
 }
