@@ -123,16 +123,16 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 h-18 flex items-center justify-between">
         <Link href="/" className="block" aria-label="Al Haya Home">
-          <AlHayaLogo className="h-12 w-auto md:h-14" />
+          <AlHayaLogo className="h-11 w-auto md:h-12 xl:h-14" />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-lg font-semibold tracking-wide transition-colors hover:text-gold"
+              className="text-base font-semibold tracking-wide transition-colors hover:text-gold"
               style={{ color: "var(--text-primary)" }}
             >
               {link.label}
@@ -140,7 +140,7 @@ export function Header() {
           ))}
 
           {/* Social icons */}
-          <div className="flex items-center gap-2 border-l pl-4" style={{ borderColor: "var(--border-color)" }}>
+          <div className="hidden xl:flex items-center gap-2 border-l pl-4" style={{ borderColor: "var(--border-color)" }}>
             {socialLinks.map((s) => (
               <a
                 key={s.name}
@@ -156,23 +156,14 @@ export function Header() {
             ))}
           </div>
 
-          {/* Call button */}
-          <a
-            href="tel:+971563129254"
-            className="flex items-center gap-2 px-4 py-2 rounded-full font-semibold text-sm whitespace-nowrap transition-all hover:scale-105"
-            style={{
-              background: "var(--color-gold)",
-              color: "#0f1419",
-            }}
-          >
-            <Phone className="w-4 h-4" />
-            +971 56 312 9254
-          </a>
-
+          {/* Single header CTA. The phone-number pill sat here too, but
+              logo + 7 links + socials + two pills overflowed the viewport at
+              1280px and forced a horizontal scrollbar. The number is still one
+              tap away in the mobile menu and inside the modal this opens. */}
           <button
             onClick={() => openCallModal("Header")}
-            className="flex items-center gap-2 px-4 py-2 rounded-full font-semibold text-sm whitespace-nowrap border transition-all hover:scale-105 cursor-pointer"
-            style={{ borderColor: "var(--color-gold)", color: "var(--color-gold)" }}
+            className="flex items-center gap-2 px-4 py-2 rounded-full font-semibold text-sm whitespace-nowrap transition-all hover:scale-105 cursor-pointer"
+            style={{ background: "var(--color-gold)", color: "#0f1419" }}
           >
             <Phone className="w-4 h-4" />
             Request a Call
