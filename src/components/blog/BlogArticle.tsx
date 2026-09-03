@@ -108,7 +108,7 @@ export function BlogArticle({ post }: BlogArticleProps) {
 
               <div className="md:pl-[3.75rem]">
                 {section.paragraphs?.map((p, i) => (
-                  <p key={i} className="text-base md:text-lg leading-[1.85] mb-5" style={{ color: "var(--text-secondary)" }}>{p}</p>
+                  <p key={i} className="text-base md:text-lg leading-[1.85] mb-5 [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2" style={{ color: "var(--text-secondary)" }} dangerouslySetInnerHTML={{ __html: p }} />
                 ))}
 
                 {section.bullets && (
@@ -122,7 +122,7 @@ export function BlogArticle({ post }: BlogArticleProps) {
                         <span className="w-7 h-7 rounded-lg bg-gold/15 border border-gold/40 flex items-center justify-center flex-shrink-0 mt-0.5">
                           <Check className="w-4 h-4 text-gold" strokeWidth={3} />
                         </span>
-                        <span className="leading-relaxed" style={{ color: "var(--text-secondary)" }}>{b}</span>
+                        <span className="leading-relaxed [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2" style={{ color: "var(--text-secondary)" }} dangerouslySetInnerHTML={{ __html: b }} />
                       </div>
                     ))}
                   </div>

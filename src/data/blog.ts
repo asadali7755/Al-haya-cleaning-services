@@ -1,6 +1,7 @@
 import type { BlogPost } from "@/types";
+import generated from "./generated-blog-posts.json";
 
-export const blogPosts: BlogPost[] = [
+const handWrittenPosts: BlogPost[] = [
   {
     slug: "deep-cleaning-cost-dubai",
     title: "How Much Does Deep Cleaning Cost in Dubai? (2026 Price Guide)",
@@ -509,6 +510,14 @@ export const blogPosts: BlogPost[] = [
     relatedServices: ["curtains-cleaning", "sofa-carpet-cleaning", "deep-cleaning"],
   },
 ];
+
+// Articles the SEO agent pipeline publishes land in this JSON file (see
+// services/agent-publisher/src/villa.writer.ts in the seo-agents repo).
+// Hand-written posts stay first so the editorial ones lead the blog index;
+// every consumer sorts by date anyway.
+const generatedPosts = generated as unknown as BlogPost[];
+
+export const blogPosts: BlogPost[] = [...handWrittenPosts, ...generatedPosts];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((p) => p.slug === slug);
