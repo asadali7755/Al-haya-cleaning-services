@@ -88,4 +88,16 @@ export const serviceGalleries: Record<string, string[]> = {
     "/images/services/carSeats/carSeats-cleaning.webp",
     "/images/services/carSeats/carSeatsCleaning-details.webp",
   ],
+  // Floor care has no photography of its own yet. These are floor-focused
+  // shots reused from other services' shoots: machine scrubbing, rotary
+  // polishing, and a before/after floor. Replace them if dedicated marble
+  // and grout photos are taken.
+  "floor-care": [
+    "/images/services/deep-cleaning/deep2.webp",
+    "/images/services/villa-cleaning/villa5.webp",
+    "/images/services/const/post4.webp",
+    "/images/services/deep-cleaning/deep5.webp",
+    "/images/services/const/post1.webp",
+    "/images/services/deep-cleaning/deep6.webp",
+  ],
 };
