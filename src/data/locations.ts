@@ -232,6 +232,37 @@ export const emirates: Emirate[] = [
           { question: "Are your products safe for children and pets?", answer: "Yes. We use eco-friendly, non-toxic cleaning products that are safe for families while still delivering a powerful clean." },
         ],
       },
+      {
+        name: "Jumeirah Park", slug: "jumeirah-park", emirateSlug: "dubai",
+        description: "Al Haya provides villa cleaning, deep cleaning and every specialist service across Jumeirah Park's nine districts of Regional, Legacy and Heritage villas.",
+        metaTitle: "Cleaning Services Jumeirah Park Dubai | Deep Cleaning & Villa Cleaning",
+        metaDescription: "Deep cleaning services in Jumeirah Park, plus villa, sofa, carpet & floor cleaning across all 9 districts. Free quote: +971 56 312 9254.",
+        intro:
+          "Jumeirah Park is a 380-hectare, family-focused villa community made up of nine numbered districts and more than 3,000 standalone villas, built in three architectural styles — Regional, Legacy and Heritage — each available as a 3, 4 or 5-bedroom home. Al Haya is one of the cleaning companies actively serving Jumeirah Park, and deep cleaning services in Jumeirah Park is the single most-searched cleaning need in the community, which is why it's our starting point here — followed by every other service families in JP ask for.",
+        sections: [
+          {
+            heading: "Deep Cleaning Services in Jumeirah Park",
+            body: "Deep cleaning in Jumeirah Park is different from an apartment job: these are full standalone villas with private gardens, driveways, majlis areas and multiple bathrooms across two floors. Our deep cleaning team works room by room — kitchen degreasing, bathroom descaling, skirting boards, AC vents and light fixtures — whether it's a Regional, Legacy or Heritage-style villa, and whether it's a one-time deep clean or the reset before a new tenancy.",
+          },
+          {
+            heading: "Villa, Sofa, Carpet & Floor Cleaning Across All 9 Districts",
+            body: "Beyond deep cleaning, Al Haya covers every service Jumeirah Park villas need: villa cleaning for the full property, sofa cleaning and carpet cleaning in Jumeirah Park for living and majlis areas, floor cleaning and floor care for the marble and tile common in Legacy and Heritage villas, curtains cleaning for the tall villa windows, mattress cleaning, window cleaning inside and out, and move-in/move-out cleaning for the frequent turnover between JP's District 1 through District 9. We reach every district — District 1 and District 2 near the Jumeirah Park Pavilion, through District 8 and District 9 closer to Hessa Street — with the same trained team and eco-friendly products.",
+          },
+          {
+            heading: "Well-Connected, Easy to Reach",
+            body: "Jumeirah Park sits between Sheikh Zayed Road and Al Khail Road, a short drive from Jumeirah Beach, City Walk and The Green Planet — which keeps our teams close by for fast scheduling and same-day availability across the community.",
+          },
+        ],
+        propertyTypes: ["Regional-style villas", "Legacy-style villas", "Heritage-style villas", "3, 4 & 5-bedroom villas", "District 1-9 standalone homes"],
+        faqs: [
+          { question: "Do you offer deep cleaning services in Jumeirah Park?", answer: "Yes. Deep cleaning is our most requested service in Jumeirah Park - covering kitchens, bathrooms, floors and every room across Regional, Legacy and Heritage-style villas. Call or WhatsApp +971 56 312 9254 for a free quote." },
+          { question: "Do you cover sofa cleaning and carpet cleaning in Jumeirah Park?", answer: "Yes. We provide sofa cleaning, carpet cleaning and upholstery steam cleaning across all nine districts of Jumeirah Park, using eco-friendly products safe for families and pets." },
+          { question: "Can you do floor cleaning and floor care for Jumeirah Park villas?", answer: "Yes. Many Legacy and Heritage villas in Jumeirah Park have marble and tile floors - we offer floor cleaning, machine scrubbing and polishing to keep them looking new." },
+          { question: "Which Jumeirah Park districts do you serve?", answer: "All of them - District 1 through District 9, covering Regional, Legacy and Heritage-style villas across the community." },
+          { question: "Do you handle move-in/move-out cleaning for Jumeirah Park rentals?", answer: "Yes. Our move-in/move-out cleaning is a common request in Jumeirah Park given how often villas turn over between tenants, and it's built to meet the condition landlords expect at handover." },
+          { question: "Do you offer window and curtain cleaning for Jumeirah Park villas?", answer: "Yes. Both are available on their own or bundled with a full villa deep clean - useful for JP's tall villa windows and heavier curtains." },
+        ],
+      },
     ],
   },
   {
