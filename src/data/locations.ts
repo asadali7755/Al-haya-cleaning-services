@@ -234,6 +234,7 @@ export const emirates: Emirate[] = [
       },
       {
         name: "Jumeirah Park", slug: "jumeirah-park", emirateSlug: "dubai",
+        image: "/images/areas/dubai/jumeirah-park.webp",
         description: "Al Haya provides villa cleaning, deep cleaning and every specialist service across Jumeirah Park's nine districts of Regional, Legacy and Heritage villas.",
         metaTitle: "Cleaning Services Jumeirah Park Dubai | Deep Cleaning & Villa Cleaning",
         metaDescription: "Deep cleaning services in Jumeirah Park, plus villa, sofa, carpet & floor cleaning across all 9 districts. Free quote: +971 56 312 9254.",
